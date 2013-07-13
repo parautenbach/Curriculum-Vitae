@@ -52,8 +52,14 @@
               pdftitle={Curriculum Vitae},
               pdfsubject={Curriculum Vitae},
               pdfauthor={Pieter A. Rautenbach}}
+\usepackage{rotchiffre}
 % cv item selector
 \setcounter{implevel}{2}
+% include or exclude contact details
+\usepackage{etoolbox}
+\newtoggle{public}
+\toggletrue{public}
+%\togglefalse{public}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -62,6 +68,8 @@
 \newcommand{\cpp}{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}
 \newcommand{\cs}{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\footnotesize \#}}
 \newcommand{\pp}{\raisebox{.4ex}{\tiny\bf+}}
+\newcommand{\cvitembullet}{~$\circ$~}
+\newcommand{\cvitempbullet}{\phantom{\cvitembullet}}
 \renewcommand\thefootnote{\fnsymbol{footnote}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% start %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -69,6 +77,16 @@
 \begin{document}
 
 %\frenchspacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% encrypted strings %%%%%%%%%%%%%%%%%%%%%
+
+\EdefRot{13}\me{cnenhgraonpu}
+\EdefRot{13}\adam{nqnz.anpuzna}
+\EdefRot{13}\goof{treuneq}
+\EdefRot{13}\aslam{nfynz.xuna}
+\EdefRot{13}\swannie{fjnarcbry}
+\EdefRot{13}\ben{ureofg}
+\EdefRot{13}\joan{wrebhk}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title page %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -99,25 +117,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% contact details %%%%%%%%%%%%%%%%%%%%%%%
 
 \cvsection{Contact Details}
-%\begin{cvenv}
-%  \cvitem{Residential address}{48~Libert\'{e},
-%                               4~Oude Libertas Road, \\
-%                               Stellenbosch, 7600,
-%                               South Africa}
-%  \cvitem{Postal address}{PO Box 12843, Die Boord, 
-%                          7613, South Africa}
-%  \cvitem{Mobile}{\mbox{{\pp}27 (0)82 824 3879}}
-%  %\cvitem{Work}{\mbox{{\pp}27 (0)21 888 7000}}
-%  %\cvitem{Web}{\href{http://www.whatsthatlight.com/}{www.whatsthatlight.com}}
-%  \cvitem{E-mail}{\href{mailto:parautenbach@gmail.com}{parautenbach@gmail.com}}
-%\end{cvenv}
-
-
+\iftoggle{public}{%
   \begin{cvenv}
-    \cvitem{Online}{\href{http://www.whatsthatlight.com/index.php/contact/}
-                         {www.whatsthatlight.com/contact}}
-    \cvitem{}{(Complete contact details available on request.)}
+    \cvitem{Web}{\href{http://www.whatsthatlight.com/}{www.whatsthatlight.com}}
+    \cvitem{}{(Complete contact details available on request)}
   \end{cvenv}
+}{%
+\begin{cvenv}
+  \cvitem{Residential address}{48~Libert\'{e},
+                               4~Oude Libertas Road, \\
+                               Stellenbosch, 7600,
+                               South Africa}
+  \cvitem{Postal address}{PO Box 12843, Die Boord, 
+                          7613, South Africa}
+  \cvitem{Mobile}{\mbox{{\pp}27 (0)82 824 3879}}
+  %\cvitem{Work}{\mbox{{\pp}27 (0)21 888 7000}}
+  \cvitem{Web}{\href{http://www.whatsthatlight.com/}{www.whatsthatlight.com}}
+  \cvitem{E-mail}{\href{mailto:\me@gmail.com}{\me@gmail.com}}
+\end{cvenv}
+}
 
 %\pagebreak
 
@@ -193,31 +211,31 @@
          team of two people and a business intelligence team of six people.}
   \cvitem{Contribution Highlights}
         {Projects \\
-         ~$\circ$~Developer Ecosystem: Team lead, design and implementation of \\
-         ~\phantom{$\circ$}~an app store and all supporting systems; team of 4 people \\
-         ~$\circ$~Technical lead of APIs for platform and application developers \\
-         ~$\circ$~Value-Added Services (VAS) switch for aggregating VAS providers \\
-         ~\phantom{$\circ$}~for airtime and electricity payments: Team lead, design and \\
-         ~\phantom{$\circ$}~implementation; team of 4 people \\
+         \cvitembullet Developer Ecosystem: Team lead, design and implementation 
+         \cvitempbullet of an app store and all supporting systems; team of 4 people \\
+         \cvitembullet Technical lead of APIs for platform and application developers \\
+         \cvitembullet Value-Added Services (VAS) switch for aggregating VAS providers 
+         \cvitempbullet for airtime and electricity payments: Team lead, design and 
+         \cvitempbullet implementation; team of 4 people \\
          Business Intelligence/Data Science \\
-         ~$\circ$~User data warehouse and mathematical models for churn analysis: \\
-         ~\phantom{$\circ$}~Design and technical lead \\
-         ~$\circ$~Consolidation of legacy reporting systems and reports \\
-         ~$\circ$~Redesign and replacing legacy reporting systems with modern and \\
-         ~\phantom{$\circ$}~automated technologies \\
-         ~$\circ$~Assisting the product team with deep analyses and report \\
-         ~\phantom{$\circ$}~definitions \\
+         \cvitembullet User data warehouse and mathematical models for churn analysis: 
+         \cvitempbullet Design and technical lead \\
+         \cvitembullet Consolidation of legacy reporting systems and reports \\
+         \cvitembullet Redesign and replacing legacy reporting systems with modern and 
+         \cvitempbullet automated technologies \\
+         \cvitembullet Assisting the product team with deep analyses and report 
+         \cvitempbullet definitions \\
          Other \\
-         ~$\circ$~Defining the vision and mission for \href{http://www.ponderingpanda.com/}{Pondering Panda}, MXit's\\
-         ~\phantom{$\circ$}~consumer insights company \\
-         ~$\circ$~Steering committee chairman (2011) \\
-         ~$\circ$~Assisting auditors regarding data analysis, control checks and \\
-         ~\phantom{$\circ$}~corporate governance \\
-         ~$\circ$~Internal representative for technical due diligence during the \\
-         ~\phantom{$\circ$}~acquisition by \href{http://www.worldofavatar.com/}{World of Avatar (Pty) Ltd} \\
-         ~$\circ$~In-house notification system (hardware and software) for notifying \\
-         ~\phantom{$\circ$}~developers of broken builds from the build server using \\
-         ~\phantom{$\circ$}~a USB LED device
+         \cvitembullet Defining the vision and mission for \href{http://www.ponderingpanda.com/}{Pondering Panda}, MXit's
+         \cvitempbullet consumer insights company \\
+         \cvitembullet Steering committee chairman (2011) \\
+         \cvitembullet Assisting auditors regarding data analysis, control checks and 
+         \cvitempbullet corporate governance \\
+         \cvitembullet Internal representative for technical due diligence during the 
+         \cvitempbullet acquisition by \href{http://www.worldofavatar.com/}{World of Avatar (Pty) Ltd} \\
+         \cvitembullet In-house notification system (hardware and software) for notifying 
+         \cvitempbullet developers of broken builds from the build server using a USB
+         \cvitempbullet LED device
          \\}
   \cvitem{Software Architect \\ (Dec.~2008--Jul.~2010)}
          {Architecture and analysis of software products and systems across five 
@@ -228,26 +246,25 @@
           liaising with external parties, including business partners and legal advisors.}
   \cvitem{Contribution Highlights}
          {General \\
-          ~$\circ$~Scrum/Agile practitioner \\
-          ~$\circ$~Business/Requirements Analysis and Scrum story writing \\
-          ~$\circ$~Software Development Life Cycle (SDLC): Design and \\
-          ~\phantom{$\circ$}~implementation of several SDLCs regarding process, procedures \\
-          ~\phantom{$\circ$}~and document artifacts \\
+          \cvitembullet Scrum/Agile practitioner \\
+          \cvitembullet Business/Requirements Analysis and Scrum story writing \\
+          \cvitembullet Software Development Life Cycle (SDLC): Design and 
+          \cvitempbullet implementation of several SDLCs regarding process, procedures 
+          \cvitempbullet and document artifacts \\
           Development environment \\
-          ~$\circ$~Procedures and administration of all code repositories, issue \\ 
-          ~\phantom{$\circ$}~tracking, continuous integration and other automation systems, \\
-          ~\phantom{$\circ$}~and internal documentation wiki \\
-          ~$\circ$~Formal Test-Driven Development training \\
-          ~\phantom{$\circ$}~(organised and attended) \\
+          \cvitembullet Procedures and administration of all code repositories, issue 
+          \cvitempbullet tracking, continuous integration and other automation systems, 
+          \cvitempbullet and internal documentation wiki \\
+          \cvitembullet Organising formal Test-Driven Development training 
           Products \\
-          ~$\circ$~MXit EVO client application suite: Product Owner and managing \\
-          ~\phantom{$\circ$}~an outsourced development team of three people, including \\
-          ~\phantom{$\circ$}~contract negotiations \\
-          ~$\circ$~Suggest-a-Friend recommendation system: Design \\
-          ~$\circ$~Fantasy league game for the 2010 FIFA Soccer World Cup: Design \\
-          ~$\circ$~Credit topup and banking integration system: Design \\
+          \cvitembullet MXit EVO client application suite: Product Owner and managing 
+          \cvitempbullet an outsourced development team of three people, including 
+          \cvitempbullet contract negotiations \\
+          \cvitembullet Suggest-a-Friend recommendation system: Design \\
+          \cvitembullet Fantasy league game for the 2010 FIFA Soccer World Cup: Design \\
+          \cvitembullet Credit topup and banking integration system: Design \\
           Other \\
-          ~$\circ$~Conducting developer interviews and technical inductions \\}
+          \cvitembullet Conducting developer interviews and technical inductions \\}
   \cvitem{Team Leader \\ (Oct.~2006--Nov.~2008)}
          {Managing a team of two people for services development, a team of two people for 
           \href{http://www.process-one.net/en/ejabberd/}{ejabberd} development and a team 
@@ -255,38 +272,38 @@
           Retain previous role as lead developer for the Jabber/XMPP IM core.}
   \cvitem{Contribution Highlights}
           {Products \\
-           ~$\circ$~Content portal for content delivery by platform integrators: \\
-           ~\phantom{$\circ$}~Design and team lead; system is a major source of revenue \\ 
-           ~$\circ$~Dynamic chatrooms: Redesign and team lead \\
-           ~$\circ$~Premium Rated SMS integration system: Design and development \\
-           ~$\circ$~Developing the ejabberd IM platform \\
+           \cvitembullet Content portal for content delivery by platform integrators: 
+           \cvitempbullet Design and team lead; system is a major source of revenue \\ 
+           \cvitembullet Dynamic chatrooms: Redesign and team lead \\
+           \cvitembullet Premium Rated SMS integration system: Design and development \\
+           \cvitembullet Developing the ejabberd IM platform \\
            Training \\
-           ~$\circ$~Erlang/OTP training of new employees \\
-           ~$\circ$~Jabber/XMPP training of new employees \\
+           \cvitembullet Erlang/OTP training of new employees \\
+           \cvitembullet Jabber/XMPP training of new employees \\
            Other \\
-           ~$\circ$~Defining and implementing a 3-tier operational support structure \\
-           ~$\circ$~Maintaining the relationship with 
-                    \href{http://www.process-one.net/en/}{Process-One}, the maintainers \\ 
-           ~\phantom{$\circ$}of ejabberd \\
-           ~$\circ$~Internal representative for technical due diligence during sale of \\
-           ~\phantom{$\circ$}~shares to \href{http://www.naspers.com/}{MIH Holdings (Pty) Ltd (Naspers)} \\}
+           \cvitembullet Defining and implementing a 3-tier operational support structure \\
+           \cvitembullet Maintaining the relationship with 
+                    \href{http://www.process-one.net/en/}{Process-One}, the maintainers  
+           \cvitempbullet of ejabberd \\
+           \cvitembullet Internal representative for technical due diligence during sale of 
+           \cvitempbullet shares to \href{http://www.naspers.com/}{MIH Holdings (Pty) Ltd (Naspers)} \\}
 
   \cvitem{Software Engineer \\ (Dec.~2005--Sep.~2006)}
          {Lead developer for the Jabber/XMPP IM core based on the 
           \href{http://www.process-one.net/en/ejabberd/}{ejabberd} Open Source platform.}
   \cvitem{Contribution Highlights}
          {Products \\
-          ~$\circ$~ejabberd: Development, operational support \\
-          ~$\circ$~Advertising platform: Design and development for delivering \\ 
-          ~\phantom{$\circ$}~text-based and graphical impressions to mobile phones using a \\
-          ~\phantom{$\circ$}~custom in-house modelling system with adaptive prediction of \\
-          ~\phantom{$\circ$}~available inventory; system is still the main source of revenue \\
+          \cvitembullet ejabberd: Development, operational support \\
+          \cvitembullet Advertising platform: Design and development for delivering 
+          \cvitempbullet text-based and graphical impressions to mobile phones using a 
+          \cvitempbullet custom in-house modelling system with adaptive prediction of 
+          \cvitempbullet available inventory; system is still the main source of revenue \\
           Operational \\
-          ~$\circ$~24/7 standby and support \\
-          ~$\circ$~Server setup and fine tuning (Linux/Windows) \\
-          ~$\circ$~Maintaining the relationship with 
-                   \href{http://www.process-one.net/en/}{Process-One}, the maintainers of \\ 
-          ~\phantom{$\circ$}~ejabberd}
+          \cvitembullet 24/7 standby and support \\
+          \cvitembullet Server setup and fine tuning (Linux/Windows) \\
+          \cvitembullet Maintaining the relationship with 
+                   \href{http://www.process-one.net/en/}{Process-One}, the maintainers of 
+          \cvitempbullet ejabberd}
 \end{cvenv}
 
 \pagebreak
@@ -487,8 +504,8 @@ for major players in the mining industry such as Anglo American and the De Beers
 
     \cvsubsubsection{Sport}
       \begin{cvenv}
-        \cvitem{2004}{Half marathon personal best 1h44 (bronze medal,
-                      Safari half marathon, Wellington)}
+        \cvitem{2004}{Half marathon personal best 1h44} 
+                      %(bronze medal, Safari half marathon, Wellington)
         \cvitem{Other}{Regular jogger and social participant in athletics (relays),
                        mountain biking and squash}
       \end{cvenv}
@@ -510,7 +527,7 @@ for major players in the mining industry such as Anglo American and the De Beers
 
     \cvsubsubsection{Cultural}
       \begin{cvenv}
-        \cvitem{1998}{UNISA\footnote{University of South Africa}: 
+        \cvitem{1998}{\href{http://www.unisa.ac.za/}{UNISA}: 
                       Pass Grade 8 organ examination Cum Laude}
         \cvitem{1998}{UNISA: Pass Grade 8 piano examination with
                       Honourable Mention}
@@ -591,10 +608,12 @@ for major players in the mining industry such as Anglo American and the De Beers
 % DAVE WEBER
 
 \begin{cvenv}
-  \cvitem{Mr.~A.~Nachman}{Software Architect and Team Leader (2010--2013)}
+  \cvitem{Mr.~A.~Nachman}{Software Architect and Team Leader} %(2010--2013)
   \cvitem{Company}{MXit Lifestyle (Pty) Ltd (\href{http://www.mxit.com/}{www.mxit.com})}
-  %\cvitem{Phone}{{\pp}27 (0)82 822 8538 (until July 13, 2013)}
-  %\cvitem{E-mail}{\href{mailto:adam.nachman@gmail.com}{adam.nachman@gmail.com}}
+  \iftoggle{public}{}{%
+    \cvitem{Phone}{N/A}%{\pp}27 (0)82 822 8538 (until July 13, 2013)}
+    \cvitem{E-mail}{\href{mailto:\adam@gmail.com}{\adam@gmail.com}}
+  }
   \cvitem{Capacity}{Long-standing co-architect; recuited and managed Adam directly}
 \end{cvenv}
 
@@ -602,8 +621,10 @@ for major players in the mining industry such as Anglo American and the De Beers
   \cvitem{Mr.~G.~Esterhuizen}{Director and Founder}
   \cvitem{Company}{Yila Consulting (Pty) Ltd (\href{http://www.yilaconsulting.com/}
                    {www.yilaconsulting.com})}
-  %\cvitem{Phone}{{\pp}27 (0)82 370 9737}
-  %\cvitem{E-mail}{\href{mailto:gerhard@yilaconsulting.com}{gerhard@yilaconsulting.com}}
+  \iftoggle{public}{}{%
+    \cvitem{Phone}{{\pp}27 (0)82 370 9737}
+    \cvitem{E-mail}{\href{mailto:\goof@yilaconsulting.com}{\goof@yilaconsulting.com}}
+  }
   \cvitem{Capacity}{Former colleague and mentor at SWiST Group Technologies and 
                     Stone Three Signal Processing}
 \end{cvenv}
@@ -611,8 +632,10 @@ for major players in the mining industry such as Anglo American and the De Beers
 \begin{cvenv}
   \cvitem{Mr.~A.~Khan}{Manager (South African branch)}
   \cvitem{Company}{factor10 (\href{http://factor10.com}{factor10.com})}
-  %\cvitem{Phone}{{\pp}27 (0)82 498 8876}
-  %\cvitem{E-mail}{\href{mailto:aslam.khan@factor10.com}{aslam.khan@factor10.com}}
+  \iftoggle{public}{}{%
+    \cvitem{Phone}{{\pp}27 (0)82 498 8876}
+    \cvitem{E-mail}{\href{mailto:\aslam@factor10.com}{\aslam@factor10.com}}
+  }
   \cvitem{Capacity}{Industry associate and provided training services to MXit Lifestyle}
 \end{cvenv}
 
@@ -620,8 +643,10 @@ for major players in the mining industry such as Anglo American and the De Beers
   \cvitem{Mr.~F.~Swanepoel}{Chief Executive Officer}
   \cvitem{Company}{Stone Three Venture Technology (Pty) Ltd 
                    (\href{http://www.stonethree.com/}{www.stonethree.com})}
-  %\cvitem{Phone}{{\pp}27 (0)83 302 2282}
-  %\cvitem{E-mail}{\href{mailto:swanepoel@stonethree.com}{swanepoel@stonethree.com}}
+  \iftoggle{public}{}{%
+    \cvitem{Phone}{{\pp}27 (0)83 302 2282}
+    \cvitem{E-mail}{\href{mailto:\swannie@stonethree.com}{\swannie@stonethree.com}}
+  }
   \cvitem{Capacity}{Former colleague at Stone Three Signal Processing and business partner 
                     for outsourced development for MXit Lifestyle}
 \end{cvenv}
@@ -629,20 +654,28 @@ for major players in the mining industry such as Anglo American and the De Beers
 \begin{cvenv}
   \cvitem{Prof.~B.M.~Herbst}{Lecturer at Department of Applied Mathematics}
   \cvitem{Institution}{Stellenbosch University (\href{http://www.sun.ac.za/}{www.sun.ac.za})}
-  %\cvitem{Phone}{{\pp}27 (0)83 566 4466}%{{\pp}27 (0)21 808 4217}
-  %\cvitem{E-mail}{\href{mailto:herbst@dip.sun.ac.za}{herbst@dip.sun.ac.za}}
+  \iftoggle{public}{}{%
+    \cvitem{Phone}{{\pp}27 (0)83 566 4466}%{{\pp}27 (0)21 808 4217}
+    \cvitem{E-mail}{\href{mailto:\ben@dip.sun.ac.za}{\ben@dip.sun.ac.za}}
+  }
   \cvitem{Capacity}{Study leader for M.Sc.Eng.~thesis}
 \end{cvenv}
 
 \begin{cvenv}
   \cvitem{Mrs.~J.E.~Roux}{Retired Lecturer at Departement of Mathematics}
   \cvitem{Institution}{Stellenbosch University (\href{http://www.sun.ac.za/}{www.sun.ac.za})}
-  %\cvitem{Phone}{{\pp}27 (0)83 652 5691} %{+27 21 808 3282}%3275 % HOME: 021 883 3463
-  %\cvitem{E-mail}{\href{mailto:jeroux@sun.ac.za}{jeroux@sun.ac.za}}
-  \cvitem{Capacity}{Personal acquaintance and mentor; Lectured to the author; 
+  \iftoggle{public}{}{%
+    \cvitem{Phone}{{\pp}27 (0)83 652 5691} %{+27 21 808 3282}%3275 % HOME: 021 883 3463
+    \cvitem{E-mail}{\href{mailto:\joan@sun.ac.za}{\joan@sun.ac.za}}
+  }
+  \cvitem{Capacity}{Personal acquaintance and mentor; \\
+                    Lectured to the author; \\
                     Author was tutor for lecturer's subjects}
 \end{cvenv}
 
-\centerline{\emph{Contact details of references available on request.}}
-          
+\iftoggle{public}{
+  \centerline{\emph{Contact details of references available on request.}}
+}{%
+}
+
 \end{document}
