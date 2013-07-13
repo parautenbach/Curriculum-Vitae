@@ -1,0 +1,634 @@
+% LaTeX document
+% Author: Pieter Rautenbach
+% Contents: Personal CV
+% Last updated: 07/2013
+
+\documentclass[10pt,a4paper,final]{columncv}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% fonts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifthenelse{\isundefined{\pdfoutput}}
+{}% none
+{%
+  \usepackage{times}%............................. Times Roman
+  \usepackage{ae}%................................
+}
+%\usepackage[T1]{fontenc}%......................... TeXBase 1 font encoding
+%\usepackage[utf8]{inputenc}
+%\usepackage{ae,aecompl}%.......................... Substitute for the EC fonts with equivalents of the CM fonts
+%\usepackage{times}%............................... Times Roman
+%\usepackage{pslatex}%............................. Use if times isn't used
+%\usepackage{lmodern}%............................ More fonts
+%\usepackage{textcomp}%........................... Additional symbols
+%\usepackage{bm}%................................. Bold math symbols
+%\usepackage{amssymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% to include logos
+\usepackage{graphicx}
+% language
+\usepackage[english]{babel}
+%\usepackage{tex4ht}
+% define hyperlink colour
+\usepackage{xcolor} %color/xcolor
+  \definecolor{darkblue}{rgb}{0,0,0.55}
+  \definecolor{darkred}{rgb}{0.55,0,0}
+% for smart reuse of footnotes
+%\usepackage[stable,symbol]{footmisc}
+% URLs
+\usepackage[hyperfootnotes=false]{hyperref}
+%\usepackage{hyperref}
+  \hypersetup{pdfpagemode=UseNone, %None ,%UseOutlines,
+              %bookmarks=false,
+              breaklinks=true,
+              colorlinks=true,
+              urlcolor=darkblue,
+              linkcolor=black,
+              %linkcolor=red,
+              linkbordercolor=white,
+              pdfstartview=FitH,
+              pdfpagelayout=OneColumn,
+              pdftitle={Curriculum Vitae},
+              pdfsubject={Curriculum Vitae},
+              pdfauthor={Pieter A. Rautenbach}}
+% cv item selector
+\setcounter{implevel}{2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\def\CC{C\raise.22ex\hbox{{\footnotesize +}}\raise.22ex\hbox{\footnotesize +}}
+%\def\CC{{C\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
+\newcommand{\cpp}{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}
+\newcommand{\cs}{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\footnotesize \#}}
+\newcommand{\pp}{\raisebox{.4ex}{\tiny\bf+}}
+\renewcommand\thefootnote{\fnsymbol{footnote}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% start %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%\frenchspacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title page %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makecvtitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% personal %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection{Personal Information}
+\begin{cvenv}%[!{--}]
+  \cvitem{Surname}{Rautenbach}
+  \cvitem{Names}{Pieter (Albertus)}
+  \cvitem{Identity no.}{800218 5052 089}
+  \cvitem{Date of birth}{February 18, 1980}%18th February 1980}
+  \cvitem{Gender}{Male}
+  \cvitem{Marital status}{Single -- nil dependents}
+  \cvitem{Nationality}{South African}% Citizen}
+  \cvitem{Driver's licence}{Code B (no endorsements)}
+  \cvitem{Criminal offences}{None}
+  \cvitem{Passport}{444 099 110}
+  \cvitem{Languages}{Afrikaans and English: Native or bilingual proficiency; \\
+                     German: Elementary proficiency}
+  \cvitem{Health}{Excellent}
+  \cvitem{Recreational}{Mountain biking; Jogging; Hiking; Reading and writing; Classical music; Playing piano; A cappella singing; Bridge; Formula 1}
+\end{cvenv}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% contact details %%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection{Contact Details}
+\begin{cvenv}
+  \cvitem{Residential address}{48~Libert\'{e},
+                               4~Oude Libertas Road, \\
+                               Stellenbosch, 7600,
+                               South Africa}
+  \cvitem{Postal address}{PO Box 12843, Die Boord, 
+                          7613, South Africa}
+  \cvitem{Mobile}{\mbox{{\pp}27 (0)82 824 3879}}
+  %\cvitem{Work}{\mbox{{\pp}27 (0)21 888 7000}}
+  %\cvitem{Web}{\href{http://www.whatsthatlight.com/}{\url{www.whatsthatlight.com}}}
+  \cvitem{E-mail}{\href{mailto:parautenbach@gmail.com}{\url{parautenbach@gmail.com}}}
+\end{cvenv}
+
+%\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% education %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection{Education}
+\cvsubsection{Tertiary level}
+\begin{cvenv}
+  \cvitem{Degrees}{M.Sc.Eng.~(Digital Signal Processing and Machine Learning) \\
+                   %(73\% aggregate) \\
+                   B.Eng.~(Electric and Electronic Eng. with Computer Science) %\\
+                   %(70\% aggregate)
+                  }
+  \cvitem{Last obtained}{April 2005}
+  \cvitem{Institute}{\href{http://www.sun.ac.za/}{Stellenbosch University}}
+%  \cvitem{Year of enrolment}{1999}
+  \cvitem{Master's Thesis}{\href{http://scholar.sun.ac.za/handle/10019.1/2875}
+                          {Facial Feature Reconstruction using Structure from Motion}\\
+                          (\href{http://www.youtube.com/watch?v=hcwSmkh1MWA}
+                                {watch a brief demo video})}
+  \cvitem[1]{Post-graduate modules}{
+%    \begin{tabular}[t]{@{}ll}
+      Digital Signal Processing, %\\                      %813 & 80\% \tabularnewline
+      Machine Learning,          %\\ %Pattern Recognition %813 & 75\% \tabularnewline
+      Strategy and Marketing}                             %813 & 60\%
+%    \end{tabular}}
+\end{cvenv}
+
+\cvsubsection{Secondary Level}
+\begin{cvenv}
+  \cvitem{Qualification}{Senior Certificate with an A aggregate (distinction)}
+  \cvitem{Institute}{Swellendam High School}
+  \cvitem{Year obtained}{1998}
+%  \cvitem{Distinctions}{Mathematics, Biology, Music (Piano), \\ Music Performance (Organ)}
+  \cvitem[1]{Subjects}{
+%    \begin{tabular}[t]{@{}ll}
+      Afrikaans First Language,       %\\ %& HG \tabularnewline%B
+      English First Language,         %\\ %& HG \tabularnewline%C
+      Mathematics,                    %\\ %& HG \tabularnewline%A
+      Physical Science,               %\\ %& HG \tabularnewline%B
+      Biology,                        %\\ %& HG \tabularnewline%A
+      Music (Piano),                  %\\ %& HG \tabularnewline%A
+      Music Performance (Pipe Organ)}     %& SG \tabularnewline%A
+%    \end{tabular}}
+%  \cvitem{}{\textbf{HG:} Higher grade \textbf{SG:} Standard grade}
+\end{cvenv}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% professional career %%%%%%%%%%%%%%%%%%%%%
+
+\cvsection{Professional Career}
+\cvsubsection{Current Position}
+\cvsubsubsection{MXit Lifestyle (Pty) Ltd}
+\noindent \href{http://www.mxit.com/}{MXit Lifestyle} provides a social network and mobile 
+		  instant messaging (IM) platform named MXit. The 
+          company grew from 10 employees in 2005 to its current size of well over 100 
+          employees. The platform has more than 30 million registered users and beyond IM,
+          it provides users with services for information, education, games, community 
+          support, and developers with a platform for building applications and much more. 
+          % \includegraphics[scale=0.4,bb=0 0 55 22]{MXit_Lifestyle_Logo_B&W_Small.png}
+\\[-3em]
+
+\begin{cvenv}
+  \cvitem{}{} % hack
+  
+  \cvitem{Head of Enterprise Architecture \\ (Aug.~2010--)}
+         {Building and managing the architecture competency for MXit with regards to 
+         business, information and system architecture for the alignment of goals, 
+         objectives and processes. Specific attention is paid to best practices, business 
+         intelligence, procedures, standards and automation. Continual design and 
+         development of several large scale systems. Managing and building an architecture
+         team of two people and a business intelligence team of six people.}
+  \cvitem{Contribution Highlights}
+        {Projects \\
+         ~$\circ$~Developer Ecosystem: Team lead, design and implementation of \\
+         ~\phantom{$\circ$}~an app store and all supporting systems; team of 4 people \\
+         ~$\circ$~Technical lead of APIs for platform and application developers \\
+         ~$\circ$~Value-Added Services (VAS) switch for aggregating VAS providers \\
+         ~\phantom{$\circ$}~for airtime and electricity payments: Team lead, design and \\
+         ~\phantom{$\circ$}~implementation; team of 4 people \\
+         Business Intelligence/Data Science \\
+         ~$\circ$~User data warehouse and mathematical models for churn analysis: \\
+         ~\phantom{$\circ$}~Design and technical lead \\
+         ~$\circ$~Consolidation of legacy reporting systems and reports \\
+         ~$\circ$~Redesign and replacing legacy reporting systems with modern and \\
+         ~\phantom{$\circ$}~automated technologies \\
+         ~$\circ$~Assisting the product team with deep analyses and report \\
+         ~\phantom{$\circ$}~definitions \\
+         Other \\
+         ~$\circ$~Defining the vision and mission for \href{http://www.ponderingpanda.com/}{Pondering Panda}, MXit's\\
+         ~\phantom{$\circ$}~consumer insights company \\
+         ~$\circ$~Steering committee chairman (2011) \\
+         ~$\circ$~Assisting auditors regarding data analysis, control checks and \\
+         ~\phantom{$\circ$}~corporate governance \\
+         ~$\circ$~Internal representative for technical due diligence during the \\
+         ~\phantom{$\circ$}~acquisition by \href{http://www.worldofavatar.com/}{World of Avatar (Pty) Ltd} \\
+         ~$\circ$~In-house notification system (hardware and software) for notifying \\
+         ~\phantom{$\circ$}~developers of broken builds from the build server using \\
+         ~\phantom{$\circ$}~a USB LED device
+         \\}
+  \cvitem{Software Architect \\ (Dec.~2008--Jul.~2010)}
+         {Architecture and analysis of software products and systems across five 
+          development teams (40 developers) and enterprise-wide business processes, with 
+          special focus on development processes and automation; System architecture 
+          regarding large scale client-server, distributed and fault-tolerant systems; 
+          Steering committee member for approval of development requests; Frequent 
+          liaising with external parties, including business partners and legal advisors.}
+  \cvitem{Contribution Highlights}
+         {General \\
+          ~$\circ$~Scrum/Agile practitioner \\
+          ~$\circ$~Business/Requirements Analysis and Scrum story writing \\
+          ~$\circ$~Software Development Life Cycle (SDLC): Design and \\
+          ~\phantom{$\circ$}~implementation of several SDLCs regarding process, procedures \\
+          ~\phantom{$\circ$}~and document artifacts \\
+          Development environment \\
+          ~$\circ$~Procedures and administration of all code repositories, issue \\ 
+          ~\phantom{$\circ$}~tracking, continuous integration and other automation systems, \\
+          ~\phantom{$\circ$}~and internal documentation wiki \\
+          ~$\circ$~Formal Test-Driven Development training \\
+          ~\phantom{$\circ$}~(organised and attended) \\
+          Products \\
+          ~$\circ$~MXit EVO client application suite: Product Owner and managing \\
+          ~\phantom{$\circ$}~an outsourced development team of three people, including \\
+          ~\phantom{$\circ$}~contract negotiations \\
+          ~$\circ$~Suggest-a-Friend recommendation system: Design \\
+          ~$\circ$~Fantasy league game for the 2010 FIFA Soccer World Cup: Design \\
+          ~$\circ$~Credit topup and banking integration system: Design \\
+          Other \\
+          ~$\circ$~Conducting developer interviews and technical inductions \\}
+  \cvitem{Team Leader \\ (Oct.~2006--Nov.~2008)}
+         {Managing a team of two people for services development, a team of two people for 
+          \href{http://www.process-one.net/en/ejabberd/}{ejabberd} development and a team 
+          of two people for ejabberd operational support; 
+          Retain previous role as lead developer for the Jabber/XMPP IM core.}
+  \cvitem{Contribution Highlights}
+          {Products \\
+           ~$\circ$~Content portal for content delivery by platform integrators: \\
+           ~\phantom{$\circ$}~Design and team lead; system is a major source of revenue \\ 
+           ~$\circ$~Dynamic chatrooms: Redesign and team lead \\
+           ~$\circ$~Premium Rated SMS integration system: Design and development \\
+           ~$\circ$~Developing the ejabberd IM platform \\
+           Training \\
+           ~$\circ$~Erlang/OTP training of new employees \\
+           ~$\circ$~Jabber/XMPP training of new employees \\
+           Other \\
+           ~$\circ$~Defining and implementing a 3-tier operational support structure \\
+           ~$\circ$~Maintaining the relationship with 
+                    \href{http://www.process-one.net/en/}{Process-One}, the maintainers \\ 
+           ~\phantom{$\circ$}of ejabberd \\
+           ~$\circ$~Internal representative for technical due diligence during sale of \\
+           ~\phantom{$\circ$}~shares to \href{http://www.naspers.com/}{MIH Holdings (Pty) Ltd (Naspers)} \\}
+
+  \cvitem{Software Engineer \\ (Dec.~2005--Sep.~2006)}
+         {Lead developer for the Jabber/XMPP IM core based on the 
+          \href{http://www.process-one.net/en/ejabberd/}{ejabberd} Open Source platform.}
+  \cvitem{Contribution Highlights}
+         {Products \\
+          ~$\circ$~ejabberd: Development, operational support \\
+          ~$\circ$~Advertising platform: Design and development for delivering \\ 
+          ~\phantom{$\circ$}~text-based and graphical impressions to mobile phones using a \\
+          ~\phantom{$\circ$}~custom in-house modelling system with adaptive prediction of \\
+          ~\phantom{$\circ$}~available inventory; system is still the main source of revenue \\
+          Operational \\
+          ~$\circ$~24/7 standby and support \\
+          ~$\circ$~Server setup and fine tuning (Linux/Windows) \\
+          ~$\circ$~Maintaining the relationship with 
+                   \href{http://www.process-one.net/en/}{Process-One}, the maintainers of \\ 
+          ~\phantom{$\circ$}~ejabberd}
+\end{cvenv}
+
+\pagebreak
+
+% In PHP, MySQL; queueing system in Java; Windows, Unix; Scripting in Python, Batch and Shell
+\cvsubsection{Previous Positions}
+\cvsubsubsection{Cellfind (Pty) Ltd}
+\noindent Cellfind is a Wireless Access Service Provider (WASP) that specialises in Location-Based Services (LBS), such as Look4me, Look4help and asset vehicle tracking. It also provides services for mobile content delivery (Lucky Mobile, Fresh Mobile and more). 
+\begin{cvenv}
+  \cvitem{Software Engineer \\ (Jan.~2005--Nov.~2005)}
+         {Lead developer for Cellfind's LBS product suite, including  
+         \href{http://www.look4me.co.za/}{Look4me}, a peace of mind 
+         service to locate friends and family, and  
+         \href{http://www.look4help.co.za/}{Look4help}, a mobile panic 
+         button to send a distress message with your location to friends and family.}
+  \cvitem{Contribution Highlights}
+         {Development, design, operational and customer support} %Technologies: USSD, SMS, Web/HTML, WAP/XHTML and PML \\
+\end{cvenv}
+
+%\cvsubsubsection{Oxford Brookes University}
+%\begin{cvenv}
+%  \cvitem{Research Associate \\ Nov.~2004}{Offer declined}
+%\end{cvenv}
+
+\cvsubsubsection{SWiST Group Technologies (Pty) Ltd}
+\noindent SWiST is a software development house that specialises in large scale storage of 
+caller data (Datavoir) and fraud systems. The mobile instant messenger service named MXit was
+born in its research and development department. 
+\begin{cvenv}
+  \cvitem{Junior Developer \\ (Contractor) \\ (Dec.~2001--Jan.~2002)}{Unit testing of GSM messaging ANSI C libraries}
+\end{cvenv}
+
+\cvsubsubsection{Stone Three Signal Processing (Pty) Ltd}
+\noindent Stone Three specialises, among other things, in image processing solutions 
+for major players in the mining industry such as Anglo American and the De Beers group. 
+\begin{cvenv}
+  \cvitem{Junior Developer \\ (Contractor) \\ (Dec.~2000--Jan.~2001)}{Developed a prototype optical motion sensor to detect the velocity of moving froth}
+\end{cvenv}
+
+\cvsubsection{Courses and Training Attended}
+\begin{cvenv}
+  \cvitem{2010}{Formal Test-Driven Development Course}
+  \cvitem{2010}{Naspers Harvard Business School Programme on Strategy}
+  \cvitem{2009}{Certified Scrum Master Programme}
+  \cvitem{2009}{Level One First Aid}
+  \cvitem{2008}{Formal Unified Modeling Language Course}
+\end{cvenv}
+
+\cvsubsection{Professional Memberships}
+\begin{cvenv}
+  \cvitem{2009--}{Member of the Scrum Alliance Society}
+  \cvitem{2011--}{Member of the IEEE and IEEE Computer Society}
+  \cvitem{2005--2009}{Member of the IEEE and IEEE Signal Processing Society}
+\end{cvenv}
+
+\cvsubsection{Interviews and Presentations}
+\begin{cvenv}
+  \cvitem{2012}{Presentation to high school pupils on Software Engineering at 
+                Stellenbosch University Engineering Faculty's Winter School programme}
+  \cvitem{2012}{Hack Stellenbosch Forum: Having Fun with Continuous Integration}
+  \cvitem{2011}{Bushradio 89.5fm: On the history of Mxit}
+  \cvitem{2010}{Participant in the 2010 Cape IT Initiative (CITi) Colloquium on Agile in the Enterprise}
+  \cvitem{2010}{Cape Argus Newspaper: Software engineering is `pure thought-stuff' creativity}
+  \cvitem{2006}{The Citizen Newspaper (orig. transl.: Die Burger): Engineers create a bright future for themselves and fellow beings}
+\end{cvenv}
+
+\pagebreak
+
+\cvsubsection{Proficiencies}
+\cvsubsubsection{Programming}
+\begin{cvenv}
+  \cvitem{Languages}{ANSI C/\cpp, \cs, Erlang/OTP, Python, Java, PHP, SQL, \\
+                     x86 Assembler, PIC C, VHDL}
+  \cvitem{Scripting}{Shell, Batch, Python, Ant, NAnt}
+  \cvitem{Web}{HTML, XHTML, PHP, ASP.NET, JavaScript}
+  \cvitem{Scientific}{MATLAB, Octave, Pylab (SciPy, NumPy)}
+\end{cvenv}
+
+\cvsubsubsection{Quality}
+\begin{cvenv}
+  \cvitem{Versioning Systems}{Git, Github, Subversion, CVS}
+  \cvitem{Testing}{MSTest, NUnit, JUnit, Python Nose, PHPUnit, XUnit, Selenium}
+  \cvitem{Mock Frameworks}{NMock, Mockito, jMock, moq}
+  \cvitem{Code Coverage}{dotCover, Python Nose}
+  \cvitem{Continuous Integration}{TeamCity, CruiseControl, CruiseControl.NET, Hudson, 
+                                  Jenkins, uBuild, Buildbot}
+  \cvitem{Utilities}{ReSharper, StyleCop, FxCop, PEP8}
+\end{cvenv}
+
+\cvsubsubsection{Technologies}
+\begin{cvenv}
+  \cvitem{Platforms}{Linux (Debian and Red Hat-based), MS Windows, .NET \\ 
+                     Familiar with OS X, iOS}
+  \cvitem{RDBMSs}{MySQL, MS SQL Server, PostgreSQL}
+  \cvitem{NoSQL}{Couchbase, Hadoop, Titan Graph DB}
+  \cvitem{Caching}{memcached}
+  \cvitem{Search}{ElasticSearch, Solr, Lucene}
+  \cvitem{Queueing}{Microsoft MQ, RabbitMQ}
+  \cvitem{Analytics}{Google Analytics, KISSmetrics}
+  \cvitem{Cloud Services}{Amazon Web Services}
+\end{cvenv}
+
+\cvsubsubsection{Tools}
+\begin{cvenv}
+  \cvitem{IDEs}{MS Visual Studio, Eclipse, among others}
+  \cvitem{Management}{JIRA, MS Project, Bugzilla, Mantis, YouTrack, Bugzilla}
+  \cvitem{CASE}{Enterprise Architect, MS Visio for Enterprise Architects}
+  \cvitem{Documentation}{MediaWiki, MS Sharepoint}
+\end{cvenv}
+
+\cvsubsubsection{Other}
+\begin{cvenv}
+  \cvitem{Patterns}{RESTful services, SOA, software design patterns}
+  \cvitem{Software Modelling}{UML2, ERD, BPMN, SOA}
+  \cvitem{Other}{\LaTeXe, MS office Suite}
+\end{cvenv}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% university %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection{Achievements and Involvement}
+  \cvsubsection{Post-tertiary Level}
+    \cvsubsubsection{Leadership}
+    \begin{cvenv}
+      \cvitem{2013--}{Chairman of the trustees for the Libert\'{e} residential complex}
+      \cvitem{2009--2012}{Trustee for the Libert\'{e} residential complex}
+      \cvitem{2007--}{Trustee of the MXit workers trust}
+    \end{cvenv}
+    \cvsubsubsection{Cultural}
+      \begin{cvenv}
+        \cvitem{2006--2011}{Member of the Stellenbosch Madrigal Singers}%\textit{}
+        \cvitem{2007}{Member of the Novum Cantores Chamber Choir}%\textit{}
+        \cvitem{2006}{Member of the Coristi Allegri Chamber Choir}%\textit{}
+        \cvitem{2005}{Member of the Singkronies Chamber Choir}%\textit{}
+      \end{cvenv}
+    \cvsubsubsection{Sport and Physical Activities}
+      \begin{cvenv}
+        \cvitem{2005--}{Social participation in road cycle, mountain biking and running events; hiking}
+        \cvitem{2008}{Summit Mt Kilimanjaro (Uhuru peak, 5985m amsl) on 6 Aug 2008 via the Machame route}
+      \end{cvenv}
+    \cvsubsubsection{Other}
+      \begin{cvenv}
+        \cvitem{2013}{External examiner for a master's thesis at Stellenbosch University}
+      \end{cvenv}
+
+  \cvsubsection{Tertiary Level}
+    \cvsubsubsection{Academic}
+      \begin{cvenv}
+        \cvitem{2005}{Honours for Meritorious Service (Stellenbosch University)}
+%        \cvitem[1]{2004}{Tutor for Mathematics 114 and 144}
+        \cvitem[1]{2004}{Tutor for Mathematics modules}
+%        \cvitem[1]{2003}{Tutor for Computer Systems 214 and
+%	                 Systems and Signals 344}
+        \cvitem[1]{2003}{Tutor for Computer Systems and
+	                 Systems \& Signals modules}
+	\cvitem{2001}{Invited to the University's Top Achievers' Banquet}
+      \end{cvenv}
+    \cvsubsubsection{Leadership}
+      \begin{cvenv}
+        \cvitem{2003--2004}{Voice group leader: responsible for the acquisition of the
+                            repertoire to the basses of the
+                            Stellenbosch University Choir}
+	\cvitem{2003}{Stellenbosch University Choir management
+                      (Portfolio: Secretary)}
+	\cvitem{2002}{Official advisor to first year students at residence}
+	\cvitem{2001}{Faculty of Engineering Winter School committee member}
+	\cvitem{2001}{Subeditor of residence's newspaper and jubilee issue: \\
+                      Each awarded campus' best in respective categories} % awarded *as*...?
+		      %Awarded as best residence jubilee issue}
+%	\cvitem[1]{2000}{Dutch Reformed Church Bible study conductor}
+      \end{cvenv}
+
+      %\pagebreak
+
+    \cvsubsubsection{Cultural}
+      \begin{cvenv}
+        \cvitem{2002--2004}{Member of the Stellenbosch University Choir}
+        \cvitem{2004}{Won the Mixed Youth Choir division at the Choir
+	              Olympics in Bremen, Germany, and a fourth place
+                      in the Folklore a capella division}
+        %\cvitem[1]{2004}{Member of the choir for \textit{Sinfonia Africana},
+        %                 a symphony by the South African composer
+        %                 Hendrik Hofmeyr}
+	\cvitem{2001--2002}{Member of the Pro Cantu Youth Choir of Cape Town}
+        \cvitem[1]{1999--2002}{Contributions to the residence's annual
+                               collection of essays and poetry}%,
+                               %Die Penveer}
+                               %and actively participates in cultural gatherings}
+	\cvitem[1]{1999--2000}{Member of residence's serenade}
+	\cvitem[1]{2000}{Third place in the local serenade competition}
+	\cvitem[1]{2000}{Member of residence's drama party}
+	\cvitem[1]{1999}{Member of residence's culture committee}
+      \end{cvenv}
+
+%\pagebreak
+
+    \cvsubsubsection{Sport}
+      \begin{cvenv}
+        \cvitem{2004}{Half marathon personal best 1h44 (bronze medal,
+                      Safari half marathon, Wellington)}
+	\cvitem{Other}{Regular jogger and social participant in athletics (relays),
+	               mountain biking and squash}
+      \end{cvenv}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% school %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \cvsubsection{Primary and Secondary Level}
+    \cvsubsubsection{Academic}
+      \begin{cvenv}
+	\cvitem{1998}{Academic merit awards (honours)}
+	\cvitem[1]{1998}{Third round Old Mutual Mathematics Olympiad}
+	\cvitem{1992}{National Winner: Soil Conservation Project (SANTAR)}
+      \end{cvenv}
+    \cvsubsubsection{Leadership}
+      \begin{cvenv}
+	\cvitem{1998}{Member of Student Council}
+	\cvitem{1998}{Chairman Debating Society}
+%	\cvitem{1998}{ACSV\footnote{Afrikaanse Christen-studentevereniging}
+%                     Bible study conductor and committee member}
+      \end{cvenv}
+
+    \cvsubsubsection{Cultural}
+      \begin{cvenv}
+	\cvitem{1998}{UNISA\footnote{University of South Africa}: Pass Grade 8 organ examination Cum Laude}
+	\cvitem{1998}{UNISA: Pass Grade 8 piano examination with
+		      Honourable Mention}
+	\cvitem{1998}{Cultural merit awards (honours)}
+	\cvitem{1998}{Gazette editorial member}
+        \cvitem{1995--1998}{Organist for the Dutch Reformed Church}
+%	\cvitem[1]{1991--1998}{Participant in North Boland, Ratem,
+%                              Stellenbosch and Paarl eisteddfods;
+%                              received various Class Winner, Cum Laude
+%                              and Golden awards for piano, poetry
+%                              (Afrikaans and English),
+%                              school choir and serenade recitals}
+	\cvitem[1]{1991--1998}{Participant in numerous eisteddfods;
+                              received many class winner, cum laude
+                              and golden awards for piano, poetry
+                              (Afrikaans and English),
+                              school choir and serenade recitals}
+	\cvitem{1988--1998}{Member of school choir}
+	\cvitem{1996--1998}{Founder member of  boys serenade}
+%	\cvitem[1]{1998}{Participant in ATKV\footnote{Afrikaanse Taal- en Kultuurvereniging}
+%                         and Rapportryers orator's competitions}
+	\cvitem{1995}{UNISA Roll of Honour: Grade 6 piano examination}
+	\cvitem{1995}{Completed Toastmasters course presented by the
+		      Stellenbosch Toastmasters Club}
+        \cvitem[1]{1995}{Leading part in local production of Grease, the play}
+      \end{cvenv}
+
+    \cvsubsubsection{Sport}
+      \begin{cvenv}
+        \cvitem[1]{1996--1998}{Participant in North Boland athletics championships}
+	\cvitem{1998}{First rugby team}
+	\cvitem[1]{1994--1996}{Sanlam cycling fun ride}
+	\cvitem{1994}{Second place in 400m at SWD\footnote{South-Western Districts}
+                      athletics championships}
+	\cvitem{1993}{Provincial colours (SWD) in 100m and 4$\times$100m relay}
+        \cvitem{1993}{Third place in Relay at former Cape Province
+                      championships}
+      \end{cvenv}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% references %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection{References}
+
+%\begin{cvenv}
+%  \cvitem{Mr.~J.M.~Freeman}
+%         {Technical Director \\
+%          MXit Lifestyle (Pty) Ltd}
+%  \cvitem{Phone}{{\pp}27 (0)21 888 7000}
+%%  \cvitem{E-mail}{}
+%  \cvitem{Capacity}{Current employer}
+%\end{cvenv}
+
+%\begin{cvenv}
+%  \cvitem{Mr.~A.T. Knott-Craig} % Jr
+%         {Chief Executive Officer \\
+%          Cellfind (Pty) Ltd}
+%  \cvitem{Phone}{{\pp}27 (0)11 848 8200}
+%%  \cvitem{E-mail}{}
+%  \cvitem{Capacity}{Former employer}
+%\end{cvenv}
+
+%\begin{cvenv}
+%  \cvitem{Prof.~J.A.~du Preez}
+%         {Former Digital Signal Processing Group Chairman \\
+%          Faculty of Engineering \\
+%          Department of Electronic Engineering \\
+%          Stellenbosch University}% \\
+%%          \href{http://www.dsp.sun.ac.za/~dupreez/jadp\_cv/index.html}
+%%	       {\url{http://www.dsp.sun.ac.za/~dupreez/jadp\_cv/index.html}}}
+%  \cvitem{Phone}{{\pp}27 (0)21 808 4342}
+%  \cvitem{E-mail}{\href{mailto:dupreez@dsp.sun.ac.za}{\url{dupreez@dsp.sun.ac.za}}}
+%  \cvitem{Capacity}{Study leader for M.Sc.Eng.~thesis}
+%\end{cvenv}
+
+% PIETER NEL
+% DAVE WEBER
+
+\begin{cvenv}
+  \cvitem{Mr.~A.~Nachman}{Software Architect and Team Leader (2010--2013)}
+  \cvitem{Company}{MXit Lifestyle (Pty) Ltd (\href{http://www.mxit.com/}{\url{www.mxit.com}})}
+  %\cvitem{Phone}{{\pp}27 (0)82 822 8538 (until July 13, 2013)}
+  %\cvitem{E-mail}{\href{mailto:adam.nachman@gmail.com}{\url{adam.nachman@gmail.com}}}
+  \cvitem{Capacity}{Long-standing co-architect; recuited and managed Adam directly}
+\end{cvenv}
+
+\begin{cvenv}
+  \cvitem{Mr.~G.~Esterhuizen}{Director and Founder}
+  \cvitem{Company}{Yila Consulting (Pty) Ltd (\href{http://www.yilaconsulting.com/}{\url{www.yilaconsulting.com}})}
+  %\cvitem{Phone}{{\pp}27 (0)82 370 9737}
+  %\cvitem{E-mail}{\href{mailto:gerhard@yilaconsulting.com}{\url{gerhard@yilaconsulting.com}}}
+  \cvitem{Capacity}{Former colleague and mentor at SWiST Group Technologies and Stone Three Signal Processing}
+\end{cvenv}
+
+\begin{cvenv}
+  \cvitem{Mr.~A.~Khan}{Manager (South African branch)}
+  \cvitem{Company}{factor10 (\href{http://factor10.com}{\url{factor10.com}})}
+  %\cvitem{Phone}{{\pp}27 (0)82 498 8876}
+  %\cvitem{E-mail}{\href{mailto:aslam.khan@factor10.com}{\url{aslam.khan@factor10.com}}}
+  \cvitem{Capacity}{Industry associate and provided training services to MXit Lifestyle}
+\end{cvenv}
+
+\begin{cvenv}
+  \cvitem{Mr.~F.~Swanepoel}{Chief Executive Officer}
+  \cvitem{Company}{Stone Three Venture Technology (Pty) Ltd (\href{http://www.stonethree.com/}{\url{www.stonethree.com}})}
+  %\cvitem{Phone}{{\pp}27 (0)83 302 2282}
+  %\cvitem{E-mail}{\href{mailto:swanepoel@stonethree.com}{\url{swanepoel@stonethree.com}}}
+  \cvitem{Capacity}{Former colleague at Stone Three Signal Processing and business partner for outsourced development for MXit Lifestyle}
+\end{cvenv}
+
+\begin{cvenv}
+  \cvitem{Prof.~B.M.~Herbst}{Lecturer at Department of Applied Mathematics}
+  \cvitem{Institution}{Stellenbosch University (\href{http://www.sun.ac.za/}{\url{www.sun.ac.za}})}
+  %\cvitem{Phone}{{\pp}27 (0)83 566 4466}%{{\pp}27 (0)21 808 4217}
+  %\cvitem{E-mail}{\href{mailto:herbst@dip.sun.ac.za}{\url{herbst@dip.sun.ac.za}}}
+  \cvitem{Capacity}{Study leader for M.Sc.Eng.~thesis}
+\end{cvenv}
+
+\begin{cvenv}
+  \cvitem{Mrs.~J.E.~Roux}{Retired Lecturer at Departement of Mathematics}
+  \cvitem{Institution}{Stellenbosch University (\href{http://www.sun.ac.za/}{\url{www.sun.ac.za}})}
+  %\cvitem{Phone}{{\pp}27 (0)83 652 5691} %{+27 21 808 3282}%3275 % HOME: 021 883 3463
+  %\cvitem{E-mail}{\href{mailto:jeroux@sun.ac.za}{\url{jeroux@sun.ac.za}}}
+  \cvitem{Capacity}{Personal acquaintance and mentor; Lectured to the author; Author was tutor for lecturer's subjects}
+\end{cvenv}
+
+\centerline{\emph{Contact details of references available on request.}}
+          
+\end{document}
