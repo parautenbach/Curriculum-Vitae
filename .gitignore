@@ -8,3 +8,5 @@
 *.pdf
 
 make.sh
+
+.DS_Store
