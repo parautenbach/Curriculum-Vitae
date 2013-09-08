@@ -1,4 +1,4 @@
 Curriculum-Vitae
 ================
 
-Personal CV in latex.
+Personal CV in LaTeX using my custom column class.
