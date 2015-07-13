@@ -1,7 +1,7 @@
 % LaTeX document
 % Author: Pieter Rautenbach
 % Contents: Personal CV
-% Last updated: 09/2013
+% Last updated: 07/2015
 
 \documentclass[10pt,a4paper,final]{columncv}
 
@@ -60,6 +60,7 @@
 \newtoggle{public}
 \toggletrue{public}
 %\togglefalse{public}
+\usepackage{parskip}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -132,7 +133,7 @@
                                South Africa}
   \cvitem{Postal address}{PO Box 12843, Die Boord, 
                           7613, South Africa}
-  \cvitem{Mobile}{\mbox{{\pp}27 (0)82 824 3879}}
+  \cvitem{Mobile}{\mbox{{\pp}27 82 824 3879}}
   %\cvitem{Work}{\mbox{{\pp}27 (0)21 888 7000}}
   \cvitem{E-mail}{\href{mailto:\me@gmail.com}{\me@gmail.com}}
   \cvitem{Web}{\href{http://www.whatsthatlight.com/}{www.whatsthatlight.com}}
@@ -190,24 +191,57 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% professional career %%%%%%%%%%%%%%%%%%%%%
 
 \cvsection{Professional Career}
+\cvsubsection{Profile}
+
+In short, I am a technologist, engineer, scientist, mentor and team player.
+
+I am an intrinsically motivated individual with great analytical and mentoring skills, that value integrity. I enjoy solving problems while finding a balance between what the business or customer needs vs. implementing a sustainable solution. 
+
+I have managed several teams and successfully delivered projects over the course of 10 years and can apply agile principles in practice. I have a passion for process and system automation, and software quality. I have significant experience in these areas and drive these ideas with every team that I've lead or have been involved with. 
+
+My domain knowledge entails the design and implementation of distributed, highly concurrent systems as applied in the field of social media, location-based services, value-added services and system integration. I know a particularly large number of programming languages and reliable, modern technologies. Besides software architecture, I'm also well versed in business analysis and business process modelling. I have contributed to start-ups three times and lived through one major sale of shares and one acquisition, while being on the due diligence team on both occasions. 
+
+Besides my experience in both software development/operations and product management environments, I have a passion for data analytics, as supported by my qualifications in digital signal processing and machine learning. 
+
+I believe it is important to engage with the ICT community on a regular basis and for that reason I have participated by means of presentations, interviews and articles. 
+
+Living a balanced life is vital to maintaining a sustainable pace. I value spending time with friends and family while also staying fit with mountain biking and running. My love for music allows me to escape from work in order to revitalise. I play the piano, among other instruments, and enjoy on-stage performances for a cappella singing. 
+
 \cvsubsection{Current Position}
 \cvsubsubsection{Praelexis (Pty) Ltd}
 \noindent \href{http://www.praelexis.com/}{Praelexis} is a a machine learning and predictive 
-analytics company. We develop solutions based on advanced mathematical models and known 
-business principles to find hidden patterns and associations in data. These solutions are used 
-to make predictions on the behaviour of our clients' clients -- who is likely to click, buy, lie, or die.
+analytics company that develop solutions based on advanced mathematical models and known 
+business principles to find and explain hidden patterns and associations in data. 
+
 \begin{cvenv}
-  \cvitem{Start-up Maverick \\ (Sep.~2013--)}
-         {Start-up all-rounder responsible for the overall system architecture, product 
-         development, hands-on machine learning, strategic thinking and organisational
-	 structure.}
+  \cvitem{Lead Architect and Data Scientist \\ (Sep.~2013--)}
+         {Start-up all-rounder responsible for the team building, overall system architecture,  
+         product development, hands-on machine learning, strategic thinking and organisational
+	       structure and mentoring.}
+  \cvitem{Contribution Highlights}
+         {Domains \\ 
+          \cvitembullet Health care: Fraud, waste and abuse detection \\
+          \cvitembullet Education: Learner interventions, data warehousing \\
+          \cvitembullet Supply chains: Inventory management and optimisation \\
+          Products \\
+          \cvitembullet Bespoke online education portal for descriptive analytics,  
+          \cvitempbullet machine learning and data science \\
+          Projects \\
+          \cvitembullet A bespoke, scalable workflow management system and extensible 
+          \cvitempbullet platform for ETL, data warehousing and machine learning \\
+          \cvitembullet An in-house framework for automated testing of data workflows \\
+          Other \\
+          \cvitembullet Building a cross-functional team that operates on agile principles \\
+          \cvitembullet General operational management \\
+          \cvitembullet Business and technical strategic decision making
+          }
 \end{cvenv}
 
 \cvsubsection{Previous Positions}
 \cvsubsubsection{MXit Lifestyle (Pty) Ltd}
 \noindent \href{http://www.mxit.com/}{MXit Lifestyle} provides a social network and mobile 
-          instant messaging (IM) platform named MXit. The 
-          company grew from 10 employees in 2005 to its current size of well over 100 
+          instant messaging (IM) platform named MXit, Africa's first and largest. The 
+          company grew from 10 employees in 2005 to its peak size of 150 
           employees. The platform services millions of active users and beyond IM,
           it provides users with services for information, education, games, community 
           support, and developers with a platform for building applications and much more. 
@@ -225,7 +259,7 @@ to make predictions on the behaviour of our clients' clients -- who is likely to
          development of several large scale systems. Managing and building an architecture
          team of two people and a business intelligence team of six people.}
   \cvitem{Contribution Highlights}
-        {Projects \\
+         {Projects \\
          \cvitembullet Developer Ecosystem: Team lead, design and implementation 
          \cvitempbullet of an app store and all supporting systems; team of 4 people \\
          \cvitembullet Technical lead of APIs for platform and application developers \\
@@ -270,7 +304,7 @@ to make predictions on the behaviour of our clients' clients -- who is likely to
           \cvitembullet Procedures and administration of all code repositories, issue 
           \cvitempbullet tracking, continuous integration and other automation systems, 
           \cvitempbullet and internal documentation wiki \\
-          \cvitembullet Organising formal Test-Driven Development training 
+          \cvitembullet Organising formal Test-Driven Development training \\
           Products \\
 	  \cvitembullet Idols SA Voting Platform: Design and technical lead \\
           \cvitembullet MXit EVO client application suite: Product Owner and managing 
@@ -279,6 +313,7 @@ to make predictions on the behaviour of our clients' clients -- who is likely to
           \cvitembullet Suggest-a-Friend recommendation system: Design \\
           \cvitembullet Fantasy league game for the 2010 FIFA Soccer World Cup: Design \\
           \cvitembullet Credit topup and banking integration system: Design \\
+          \cvitembullet MXit third-party developer SDK: Conceptual design \\
           Other \\
           \cvitembullet Conducting developer interviews and technical inductions \\}
   \cvitem{Team Leader \\ (Oct.~2006--Nov.~2008)}
@@ -302,11 +337,8 @@ to make predictions on the behaviour of our clients' clients -- who is likely to
                     \href{http://www.process-one.net/en/}{Process-One}, the maintainers  
            \cvitempbullet of ejabberd \\
            \cvitembullet Internal representative for technical due diligence during sale of 
-           \cvitempbullet shares to \href{http://www.naspers.com/}{MIH Holdings (Pty) Ltd (Naspers)} \\}
+           \cvitempbullet shares to \href{http://www.naspers.com/}{MIH Holdings (Pty) Ltd (Naspers)}}
 \end{cvenv}
-
-
-\pagebreak
 
 \begin{cvenv}
   \cvitem{Software Engineer \\ (Dec.~2005--Sep.~2006)}
@@ -382,8 +414,9 @@ for major players in the mining industry such as Anglo American and the De Beers
   \cvitem{2005--2009}{Member of the IEEE and IEEE Signal Processing Society}
 \end{cvenv}
 
-\cvsubsection{Interviews and Presentations}
+\cvsubsection{Interviews, Presentations and Community Involvement}
 \begin{cvenv}
+  \cvitem{2014}{Workshop for grade 11 learners on Computer Science as a career}
   \cvitem{2012}{Presentation to high school pupils on Software Engineering at 
                 Stellenbosch University Engineering Faculty's Winter School programme}
   \cvitem{2012}{Hack Stellenbosch Forum: Having Fun with Continuous Integration}
@@ -400,42 +433,46 @@ for major players in the mining industry such as Anglo American and the De Beers
 \cvsubsubsection{Programming}
 \begin{cvenv}
   \cvitem{Languages}{ANSI C/\cpp, \cs, Erlang/OTP, Python, Java, PHP, SQL, \\
-                     x86 Assembler, PIC C, VHDL}
+                     Node.js, x86 Assembler, PIC C, VHDL}
   \cvitem{Scripting}{Shell, Batch, Python, Ant, NAnt}
-  \cvitem{Web}{HTML, XHTML, PHP, ASP.NET, JavaScript}
-  \cvitem{Scientific}{MATLAB, Octave, Pylab (SciPy, NumPy)}
+  \cvitem{Web}{HTML, XHTML, PHP, ASP.NET, JavaScript, CSS}
+  \cvitem{Scientific}{MATLAB, Octave, Pylab (SciPy, NumPy, scikit-learn, Pandas)}
 \end{cvenv}
 
 \cvsubsubsection{Quality}
 \begin{cvenv}
-  \cvitem{Versioning Systems}{Git, Github, Subversion, CVS}
-  \cvitem{Testing}{MSTest, NUnit, JUnit, Python Nose, PHPUnit, XUnit, Selenium}
-  \cvitem{Mock Frameworks}{NMock, Mockito, jMock, moq}
-  \cvitem{Code Coverage}{dotCover, Python Nose}
+  \cvitem{Versioning Systems}{Git, Github, Bitbucket, Subversion, CVS}
+  \cvitem{Testing}{MSTest, NUnit, JUnit, Python Nose, PHPUnit, XUnit, Selenium, Mocha, Karma}
+  \cvitem{Mock Frameworks}{NMock, Mockito, jMock, moq, PhantomJS}
+  \cvitem{Code Coverage}{dotCover, Python Nose, Coverage.py, Istanbul}
   \cvitem{Continuous Integration}{TeamCity, CruiseControl, CruiseControl.NET, Hudson, 
                                   Jenkins, uBuild, Buildbot}
-  \cvitem{Utilities}{ReSharper, StyleCop, FxCop, PEP8}
+  \cvitem{Web Automation}{CasperJS}
+  \cvitem{Code Quality}{ReSharper, StyleCop, FxCop, PEP8, several linters, 
+                        code duplication tools, code coverage tools}
 \end{cvenv}
 
 \cvsubsubsection{Technologies}
 \begin{cvenv}
   \cvitem{Platforms}{Linux (Debian and Red Hat-based), MS Windows, .NET \\ 
                      Familiar with OS X, iOS}
-  \cvitem{RDBMSs}{MySQL, MS SQL Server, PostgreSQL}
-  \cvitem{NoSQL}{Couchbase, Hadoop, Titan Graph DB}
+  \cvitem{RDBMSs}{MySQL, MS SQL Server, PostgreSQL, Greenplum}
+  \cvitem{NoSQL}{Couchbase, Hadoop family, Titan Graph DB}
   \cvitem{Caching}{memcached}
   \cvitem{Search}{ElasticSearch, Solr, Lucene}
   \cvitem{Queueing}{Microsoft MQ, RabbitMQ}
+  \cvitem{Web Frameworks}{ExpressJS, AngularJS, Django}
   \cvitem{Analytics}{Google Analytics, KISSmetrics}
   \cvitem{Cloud Services}{Amazon Web Services}
+  \cvitem{Other}{Avro, Thrift, Luigi}
 \end{cvenv}
 
 \cvsubsubsection{Tools}
 \begin{cvenv}
-  \cvitem{IDEs}{MS Visual Studio, Eclipse, among others}
+  \cvitem{IDEs}{MS Visual Studio, Eclipse, PyCharm, WebStorm, IntelliJ, among others}
   \cvitem{Management}{JIRA, MS Project, Bugzilla, Mantis, YouTrack, Bugzilla}
   \cvitem{CASE}{Enterprise Architect, MS Visio for Enterprise Architects}
-  \cvitem{Documentation}{MediaWiki, MS Sharepoint}
+  \cvitem{Documentation}{MediaWiki, MS Sharepoint, JavaDoc, JSDoc, Doxygen, etc.}
 \end{cvenv}
 
 \cvsubsubsection{Other}
@@ -641,9 +678,9 @@ for major players in the mining industry such as Anglo American and the De Beers
 
 \begin{cvenv}
   \cvitem{Mr.~P.W.~Nel}{Director and Founder}
-  \cvitem{Company}{Kuza Mobile (Pty) Ltd (\href{http://kuza.com/}{kuza.com})}
+  \cvitem{Company}{Kuza Mobile (Pty) Ltd (\href{http://kuza.com/}{kuza.com}) / YouNow, Inc. (\href{http://younow.com/}{younow.com})}
   \iftoggle{public}{}{%
-    \cvitem{Phone}{{\pp}27 83 277 6930}
+    \cvitem{Phone}{{\pp}1 617 794 8427}
     \cvitem{E-mail}{\href{mailto:\nel@pwnel.net}{\nel@pwnel.net}}
   }
   %\cvitem{Web}{\href{http://www.pwnel.net/}{www.pwnel.net}}
@@ -657,7 +694,7 @@ for major players in the mining industry such as Anglo American and the De Beers
                    {www.yilaconsulting.com})}
   \iftoggle{public}{}{%
     \cvitem{Phone}{{\pp}27 82 370 9737}
-    \cvitem{E-mail}{\href{mailto:\goof@yilaconsulting.com}{\goof@yilaconsulting.com}}
+    \cvitem{E-mail}{\href{mailto:\goof@esterhuizen.org}{\goof@yesterhuizen.org}}
   }
   %\cvitem{Period}{2000, 2001}
   \cvitem{Capacity}{Former colleague and mentor at SWiST Group Technologies (2001) and 
