@@ -1,0 +1,149 @@
+% LaTeX document
+% Author: Pieter Rautenbach
+% Contents: Résumé
+
+\documentclass[10pt,a4paper,final]{columncv}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% fonts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifthenelse{\isundefined{\pdfoutput}}
+{}% none
+{%
+  \usepackage{times}%............................. Times Roman
+  \usepackage{ae}%................................
+}
+%\usepackage[T1]{fontenc}%......................... TeXBase 1 font encoding
+%\usepackage[utf8]{inputenc}
+%\usepackage{ae,aecompl}%.......................... Substitute for the EC fonts with equivalents of the CM fonts
+%\usepackage{times}%............................... Times Roman
+%\usepackage{pslatex}%............................. Use if times isn't used
+%\usepackage{lmodern}%............................. More fonts
+%\usepackage{textcomp}%............................ Additional symbols
+%\usepackage{bm}%.................................. Bold math symbols
+%\usepackage{amssymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% to include logos
+\usepackage{graphicx}
+% language
+\usepackage[english]{babel}
+%\usepackage{tex4ht}
+% define hyperlink colour
+\usepackage{xcolor} %color/xcolor
+  \definecolor{darkblue}{rgb}{0,0,0.55}
+  \definecolor{darkred}{rgb}{0.55,0,0}
+% for smart reuse of footnotes
+%\usepackage[stable,symbol]{footmisc}
+% URLs
+\usepackage[hyperfootnotes=false]{hyperref}
+%\usepackage{hyperref}
+  \hypersetup{pdfpagemode=UseNone, %None ,%UseOutlines,
+              %bookmarks=false,
+              breaklinks=true,
+              colorlinks=true,
+              urlcolor=darkblue,
+              linkcolor=black,
+              %linkcolor=red,
+              linkbordercolor=white,
+              pdfstartview=FitH,
+              pdfpagelayout=OneColumn,
+              pdftitle={Curriculum Vitae},
+              pdfsubject={Curriculum Vitae},
+              pdfauthor={Pieter A. Rautenbach}}
+\usepackage{rotchiffre}
+% cv item selector
+\setcounter{implevel}{2}
+% include or exclude contact details
+\usepackage{etoolbox}
+\newtoggle{public}
+\toggletrue{public}
+%\togglefalse{public}
+\usepackage{parskip}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\def\CC{C\raise.22ex\hbox{{\footnotesize +}}\raise.22ex\hbox{\footnotesize +}}
+%\def\CC{{C\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
+\newcommand{\cpp}{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}
+\newcommand{\cs}{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\footnotesize \#}}
+\newcommand{\pp}{\raisebox{.4ex}{\tiny\bf+}}
+\newcommand{\cvitembullet}{~$\circ$~}
+\newcommand{\cvitempbullet}{\phantom{\cvitembullet}}
+\renewcommand\thefootnote{\fnsymbol{footnote}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% start %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\lcolwidth}{0.2\textwidth}
+\setlength{\rcolwidth}{0.8\textwidth}
+\pagenumbering{gobble}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title page %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%custom
+\thispagestyle{plain}
+\begin{center}
+  {\LARGE \textbf{Pieter Rautenbach}} \\[\cvitemsep]
+  {\textit{Software Development Manager @ takealot.com}} \\[\cvitemsep]  
+  {\textit{\mbox{{\pp}27 (0) 82 824 3879} / parautenbach@gmail.com}} \\[\cvitemsep]
+  \today{}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% personal %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection{General Information}
+\begin{cvenv}
+  \cvitem{Web}{\href{http://www.whatsthatlight.com/}{www.whatsthatlight.com}}
+  \cvitem{Nationality}{South African}
+  \cvitem{ID no.}{800218 5052 08 9}
+  \cvitem{Marital status}{Single -- nil dependents}
+  \cvitem{Health}{Excellent}
+  \cvitem{Location}{Stellenbosch, South Africa}
+\end{cvenv}
+
+\cvsection{Roles \& Expertise}
+\begin{cvenv}
+  \cvitem{Summary}{Software Development Manager, General Manager, Sofware Architect, \\
+                   Product Owner, Team Lead, Data Scientist and Software Engineer \\ 
+                   with more than 12 years experience}
+  \cvitem{Qualifications}{M.Sc.Eng.~(Digital Signal Processing and Machine Learning) (2004) \\
+                          B.Eng.~(Electric and Electronic Eng. with Computer Science) (2002) \\
+                          Scrum Master, UML, TDD, Strategy \& Marketing}
+\end{cvenv}
+
+%\cvsection{Publications}
+%\cvsection{Memberships \& Affiliations}
+
+\cvsection{Employment History}
+\begin{cvenv}
+  \cvitem{takealot.com}{Software Development Manager (Dec.~2015--)}
+  \cvitem{Praelexis}{Lead Architect and Data Scientist (Sep.~2013--Nov.~2015)}
+  \cvitem{Mxit}{Head of Enterprise Architecture (Aug.~2010--Aug.~2013)}
+  \cvitem{Mxit}{Software Architect (Dec.~2008--Jul.~2010)}
+  \cvitem{Mxit}{Team Lead (Oct.~2006--Nov.~2008)}
+  \cvitem{Mxit}{Software Engineer (Dec.~2005--Sep.~2006)}
+  \cvitem{Cellfind}{Software Engineer (Jan.~2005--Nov.~2005)}
+  \cvitem{SWiST Group}{Junior Developer (Contractor) (Dec.~2001--Jan.~2002)}
+  \cvitem{Stone Three}{Junior Developer (Contractor) (Dec.~2000--Jan.~2001)}
+\end{cvenv}
+
+%\noindent
+\cvsection{Personal Insights}
+\begin{cvenv}
+  \cvitem{Skills}{Creative technologist, designer of large-scale distributed systems, \\
+                  analyst, mentor, facilitator, recruiter, agile process and structure}
+  \cvitem{Environment}{Open, trusting, flexible and collaborative, with a high level of integrity}
+  \cvitem{Traits}{Honest, professional, assertive, thorough, logical, fair, caring}
+  \cvitem{Involvement}{Presentations, interviews, workshops, articles, trustee and examiner}
+  \cvitem{Recreational}{Mountain biker, runner, hiker, singer, pianist and F1 fan}
+\end{cvenv}
+
+\vfill
+
+\begin{center}
+  {\textit{"If you get any surprises on your performance from me today, I haven't done my job."}}
+\end{center}
+
+\end{document}

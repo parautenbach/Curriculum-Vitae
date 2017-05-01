@@ -24,7 +24,7 @@
 %% Date: 23/09/2004-22/04/2005
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{columncv}[2005/04/22 v1.0 Column-based curriculum vitae class]
+\ProvidesClass{columncv}[2005/04/22 v1.0 Column-based curriculum vitae and résumé class]
 
 %\renewcommand{\normalsize}{\fontsize{10pt}{12pt}\selectfont}
 %\pagenumbering{arabic}
@@ -145,6 +145,15 @@
 \thispagestyle{plain}
 \begin{center}
   {\LARGE \textbf{Curriculum Vitae}} \\[\cvitemsep]
+  \today{}
+\end{center}
+}
+
+%% creates a heading ``Résumé'' with today's date
+\newcommand{\makeresumetitle}{
+\thispagestyle{plain}
+\begin{center}
+  {\LARGE \textbf{R\'esum\'e}} \\[\cvitemsep]
   \today{}
 \end{center}
 }
