@@ -31,8 +31,11 @@
 %\usepackage{tex4ht}
 % define hyperlink colour
 \usepackage{xcolor} %color/xcolor
-  \definecolor{darkblue}{rgb}{0,0,0.55}
+  \definecolor{darkblue}{RGB}{42,161,152}%{rgb}{0,0,0.55}
   \definecolor{darkred}{rgb}{0.55,0,0}
+  \definecolor{background}{RGB}{253,249,237}
+  \definecolor{title}{RGB}{226,99,98}
+  \definecolor{default}{RGB}{87,87,87}%{237,232,212}
 % for smart reuse of footnotes
 %\usepackage[stable,symbol]{footmisc}
 % URLs
@@ -78,22 +81,21 @@
 \setlength{\rcolwidth}{0.8\textwidth}
 \pagenumbering{gobble}
 
+% set globally
+\color{default}
+\pagecolor{background}
+
 \begin{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title page %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%custom
 \thispagestyle{plain}
 \begin{center}
   {\LARGE \textbf{Pieter Rautenbach}} \\[\cvitemsep]
   {\textit{Engineering Director @ takealot.com}} \\[\cvitemsep]  
   {\textit{\mbox{{\pp}27 (0) 82 824 3879} / parautenbach@gmail.com}} \\[\cvitemsep]
-  \today{}
+   \today{}
 \end{center}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% personal %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cvsection{General Information}
+\cvsection{\color{title}General Information}
 \begin{cvenv}
   \cvitem{Nationality}{South African}
   \cvitem{ID no.}{800218 5052 08 9}
@@ -103,7 +105,7 @@
   \cvitem{Web}{\href{http://www.whatsthatlight.com/}{www.whatsthatlight.com}}
 \end{cvenv}
 
-\cvsection{Roles \& Expertise}
+\cvsection{\color{title}Roles \& Expertise}
 \begin{cvenv}
   \cvitem{Summary}{Engineering Director, Software Development Manager, General Manager, \\
                    Sofware Architect, Product Manager, Team Lead, Data Scientist and \\ 
@@ -113,7 +115,7 @@
                           Scrum Master, UML, TDD, Strategy \& Marketing}
 \end{cvenv}
 
-\cvsection{Employment History \\[-4ex]} % hack to fix spacing problem
+\cvsection{\color{title}Employment History \\[-4ex]} % hack to fix spacing problem
 \begin{cvenv}
   \cvitem{}{} % hack to fix spacing problem
   \cvitem{takealot.com}{Engineering Director (Aug.~2017--))}
@@ -128,7 +130,7 @@
   \cvitem{Stone Three}{Junior Developer (Contractor) (Dec.~2000--Jan.~2001)}
 \end{cvenv}
 
-\cvsection{Personal Insights}
+\cvsection{\color{title}Personal Insights}
 \begin{cvenv}
   \cvitem{Skills}{Creative technologist, designer of large-scale distributed systems, \\
                   analyst, mentor, facilitator, recruiter, pragmatic agilist}
