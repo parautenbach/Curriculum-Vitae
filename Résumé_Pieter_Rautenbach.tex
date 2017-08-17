@@ -63,6 +63,8 @@
 \toggletrue{public}
 %\togglefalse{public}
 \usepackage{parskip}
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -86,6 +88,12 @@
 \pagecolor{background}
 
 \begin{document}
+
+\begin{tikzpicture}[overlay]
+  \begin{pgfonlayer}{background}
+    \draw[darkblue][line width=1cm] (-21mm,34mm) -- (-21mm,-263mm);
+  \end{pgfonlayer}
+\end{tikzpicture}
 
 \thispagestyle{plain}
 \begin{center}
@@ -134,8 +142,8 @@
 \begin{cvenv}
   \cvitem{Skills}{Creative technologist, designer of large-scale distributed systems, \\
                   analyst, mentor, facilitator, recruiter, pragmatic agilist}
-  \cvitem{Environment}{Open, trusting, flexible, collaborative, integrous}
-  \cvitem{Traits}{Honest, professional, assertive, thorough, logical, fair, caring}
+  \cvitem{Environment}{Open, trusting, flexible, collaborative}
+  \cvitem{Traits}{Honest, professional, integrous, thorough, logical, fair, caring}
   \cvitem{Involvement}{Presentations, interviews, workshops, articles, trustee and examinator}
   \cvitem{Recreational}{Mountain biker, runner, hiker, singer, pianist, photographer}
   \cvitem{References}{Stuart~Redpath, Wikus~Brink, Marnus~Freeman, Adam~Nachman, P.W.~Nel,
