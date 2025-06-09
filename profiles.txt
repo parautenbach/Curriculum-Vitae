@@ -1,0 +1,28 @@
+
+### 1. Resume/CV Format
+Keep it concise and use bullet points for readability in a resume/CV context.
+Professional Summary 
+- Seasoned technologist with over 20 years of experience in leading teams and delivering impactful projects through pragmatic agile principles and fostering collaborative environments. 
+- Expertise in designing and implementing distributed, highly concurrent systems for industries including machine learning, e-commerce, social media, and location-based services. 
+- Proficient in modern programming languages and technologies, blending technical depth with excellent analytical, mentoring, and leadership skills. 
+- Significant experience in business analysis, process optimisation, and system automation, underpinned by a passion for software quality and data analytics. 
+- Contributed to three start-ups, navigating key milestones such as acquisitions and share sales, with active participation in due diligence teams. 
+- Active member of the ICT community, contributing to industry practices through presentations, interviews, and published articles. 
+Additional Interests 
+- Personal growth and balance achieved through mountain biking, running, and music. Passionate performer, a cappella singer, and pianist, with an added love for racing bikes. 
+---
+### 2. LinkedIn Summary
+LinkedIn profiles work best with concise paragraphs, keywords, and a touch of personality to attract networking opportunities.
+I am a seasoned technologist with over 20 years of experience in designing, implementing, and delivering highly concurrent distributed systems across industries such as machine learning, e-commerce, social media, and location-based services. My expertise spans advanced programming, agile leadership, mentorship, and fostering open, collaborative environments built on trust and integrity. 
+Beyond software architecture, I excel in business analysis, process optimisation, automation, and creating sustainable, data-driven solutions. My qualifications in digital signal processing and machine learning enhance my ability to deliver impact at both the technical and business levels.
+I have had the privilege of contributing to three start-ups, navigating acquisitions, share sales, and serving on due diligence teams. As a passionate member of the ICT community, I offer insights through speaking engagements, interviews, and articles to help shape and advance industry practices. 
+Outside of work, I pursue personal growth through mountain biking, running, and music. Whether racing my bike or performing on stage with a cappella groups and piano, my love for sports and the arts helps me stay inspired. 
+---
+### 3. Personal Website/Bio
+For a personal website, the tone should be conversational while still professional. Include personal passions alongside technical expertise.
+About Me 
+Hi, I’m a seasoned technologist with over 20 years of experience solving complex problems, leading teams, and driving impactful projects. My career has allowed me to specialise in designing and building highly concurrent, distributed systems across diverse industries, including machine learning, e-commerce, social media, and location-based services.
+I enjoy working hands-on with modern programming languages and utilising my expertise in software architecture, analytical thinking, and leadership to deliver innovative solutions. My passion for software quality and data analytics extends into business analysis, process optimization, and automation. With a strong foundation in digital signal processing and machine learning, I thrive at crafting sustainable, data-driven systems that benefit businesses and customers alike.
+Over the years, I’ve contributed to three start-ups, successfully navigating acquisitions, share sales, and serving on due diligence teams. As a proud member of the ICT community, I’ve shared my knowledge through speaking engagements, interviews, and writing to inspire growth and best practices in our industry. 
+When I’m not writing code or leading projects, you’ll likely find me out on a mountain bike trail, running, or immersing myself in music. Whether it’s racing bikes, playing the piano, or performing with an a cappella group, my passion for sports and the arts helps me stay balanced and recharged for the challenges ahead. 
+Let’s connect and create something impactful together! 
