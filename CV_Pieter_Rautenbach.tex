@@ -31,18 +31,35 @@
 %\usepackage{tex4ht}
 % define hyperlink colour
 \usepackage{xcolor} %color/xcolor
-  \definecolor{darkblue}{rgb}{0,0,0.55}
-  \definecolor{darkred}{rgb}{0.55,0,0}
+  % % professional cobalt
+  % \definecolor{background}{HTML}{FFFFFF}
+  % \definecolor{left_margin}{HTML}{002147}
+  % \definecolor{heading}{HTML}{002147}
+  % \definecolor{subheading}{HTML}{0047AB}
+  % % \definecolor{hyperlink}{HTML}{008080}
+  % \definecolor{default}{HTML}{4A4A4A}
+  % modern indigo
+  \definecolor{background}{HTML}{F7F7F7}
+  \definecolor{left_margin}{HTML}{001F3F}
+  \definecolor{heading}{HTML}{001F3F}
+  \definecolor{subheading}{HTML}{004D7A}
+  \definecolor{hyperlink}{HTML}{007BFF}
+  \definecolor{default}{HTML}{555555}
+  % % classic blue tones
+  % \definecolor{background}{HTML}{FAFAFA}
+  % \definecolor{left_margin}{HTML}{002147}
+  % \definecolor{heading}{HTML}{0D47A1}
+  % \definecolor{subheading}{HTML}{3F51B5}
+  % \definecolor{hyperlink}{HTML}{1560BD}
+  % \definecolor{default}{HTML}{49515E}
 % for smart reuse of footnotes
-%\usepackage[stable,symbol]{footmisc}
 % URLs
 \usepackage[hyperfootnotes=false]{hyperref}
-%\usepackage{hyperref}
   \hypersetup{pdfpagemode=UseNone, %None ,%UseOutlines,
               %bookmarks=false,
               breaklinks=true,
               colorlinks=true,
-              urlcolor=darkblue,
+              urlcolor=hyperlink,
               linkcolor=black,
               %linkcolor=red,
               linkbordercolor=white,
@@ -51,6 +68,7 @@
               pdftitle={Curriculum Vitae},
               pdfsubject={Curriculum Vitae},
               pdfauthor={Pieter A. Rautenbach}}
+
 \usepackage{rotchiffre}
 % cv item selector
 \setcounter{implevel}{2}
@@ -60,6 +78,9 @@
 \toggletrue{public}
 %\togglefalse{public}
 \usepackage{parskip}
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+\usepackage{tabularx}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -68,15 +89,39 @@
 \newcommand{\cpp}{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}
 \newcommand{\cs}{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\footnotesize \#}}
 \newcommand{\pp}{\raisebox{.4ex}{\tiny\bf+}}
-\newcommand{\cvitembullet}{~$\circ$~}
-\newcommand{\cvitempbullet}{\phantom{\cvitembullet}}
+\newcommand{\cvitembullet}[1]{%
+  \begin{tabularx}{\linewidth}{@{}l@{\hspace{0.1em}}X@{}}
+    ~$\circ$~ & #1 \\
+  \end{tabularx}%
+}
 \renewcommand\thefootnote{\fnsymbol{footnote}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% start %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% set globally
+\color{default}
+\pagecolor{background}
+
 \begin{document}
 
 %\frenchspacing
+
+% \begin{tikzpicture}[overlay]
+%   \begin{pgfonlayer}{background}
+%     \draw[left_margin][line width=1cm] (-21mm,34mm) -- (-21mm,-263mm);
+%   \end{pgfonlayer}
+% \end{tikzpicture}
+
+\AddToHook{shipout/background}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \begin{pgfonlayer}{background}
+      % adjust xshift to match the left margin of your document
+      \draw[left_margin, line width=2cm]
+        ([xshift=0.5cm]current page.north west) -- % adjust the shift for the margin
+        ([xshift=0.5cm]current page.south west);
+    \end{pgfonlayer}
+  \end{tikzpicture}%
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% encrypted strings %%%%%%%%%%%%%%%%%%%%%
 
@@ -94,11 +139,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title page %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\makecvtitle
+\makecvtitle{\color{heading}Curriculum Vitae}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% personal %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cvsection{Personal Information}
+\cvsection{\color{heading}Personal Information}
 \begin{cvenv}%[!{|}]%[!{--}]
   \cvitem{Surname}{Rautenbach}
   \cvitem{Names}{Pieter (Albertus)}
@@ -124,7 +169,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% contact details %%%%%%%%%%%%%%%%%%%%%%%
 
-\cvsection{Contact Details}
+\cvsection{\color{heading}Contact Details}
 \iftoggle{public}{%
   \begin{cvenv}
     \cvitem{Web}{\href{http://www.whatsthatlight.com/}{www.whatsthatlight.com}}
@@ -151,8 +196,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% education %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cvsection{Education}
-\cvsubsection{Tertiary level}
+\cvsection{\color{heading}Education}
+\cvsubsection{\color{subheading}Tertiary level}
 \begin{cvenv}
   \cvitem{Degrees}{M.Sc.Eng.~(Digital Signal Processing and Machine Learning) \\
                    %(73\% aggregate) \\
@@ -174,7 +219,7 @@
 %    \end{tabular}}
 \end{cvenv}
 
-\cvsubsection{Secondary Level}
+\cvsubsection{\color{subheading}Secondary Level}
 \begin{cvenv}
   \cvitem{Qualification}{Senior Certificate with distinction}
   \cvitem{Institute}{Swellendam High School}
@@ -196,287 +241,400 @@
 \vfill
 
 \begin{center}
-  {\textit{"Software is invisible."}}
+  {\textit{\color{subheading}"Software is invisible."}}
 \end{center}
 \begin{center}
-  {\textit{"Be the first to do it better than anybody else."}}
+  {\textit{\color{subheading}"Be the first to do it better than anybody else."}}
 \end{center}
 \begin{center}
-  {\textit{"If you get any surprises in your performance review from me today, I haven't done my job."}}
+  {\textit{\color{subheading}"If you get any surprises in your performance review from me today, I haven't done my job."}}
 \end{center}
 
 \pagebreak
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% professional career %%%%%%%%%%%%%%%%%%%%%
 
-\cvsection{Professional Career}
-\cvsubsection{Profile}
+\cvsection{\color{heading}Professional Career}
+\cvsubsection{\color{subheading}Profile}
+\cvsubsubsection{\color{subheading}Technologist and Engineer | Leader with Over 20+ Years of Experience}
 
-I am a technologist and engineer by trade, with an appreciation for science. I have 
-an affinity for people and what matters to them, with a need to work in a trusting, open 
-and collaborative environment. 
+I am a seasoned technologist with an appreciation for science and a passion for
+solving complex problems. With over 20 years of experience, I have successfully managed
+teams and delivered impactful projects by applying pragmatic agile principles and
+fostering open, collaborative environments built on trust and integrity, and driving
+continuous improvement across every initiative.
 
-I am intrinsically motivated and have solid analytical and mentoring skills. I value integrity. 
-I enjoy solving problems while finding a balance between what the business or customer 
-needs vs. implementing a sustainable solution. 
+My expertise spans designing and implementing distributed, highly concurrent systems
+across industries such as machine learning, e-commerce, social media, and
+location-based services. I am proficient in a variety of modern programming languages
+and technologies, blending technical depth with strong analytical, mentoring, and
+leadership skills.
 
-I have managed several teams and successfully delivered projects over more than 20 years
-using pragmatic agile principles. I have a passion for process and system automation, and 
-software quality. I have significant experience in these areas and drive this with every team 
-that I've been involved with or lead. 
+Beyond software architecture, I bring significant experience in business analysis,
+process optimisation, and system automation, driven by my passion for software quality,
+data analytics and ongoing iterative improvements. My qualifications in digital signal
+processing and machine learning complement my technical background, allowing me to
+deliver sustainable, data-driven solutions for both businesses and customers.
 
-My technical domain knowledge entails the design and implementation of distributed, highly 
-concurrent systems as applied in the fields of social media, location-based services, value-added 
-services, system integration and retail. I know a variety of programming languages and modern 
-technologies. Besides software architecture, I'm also well versed in business analysis and 
-business process modelling. I have contributed to start-ups three times, experienced a major sale 
-of shares and an acquisition, while being on the due diligence team on both occasions. 
+I’ve contributed to three start-ups, navigating major milestones like share sales and
+acquisitions, including participation in due diligence teams. As an active member of the
+ICT community, I’ve offered insights through presentations, interviews, and published
+articles to help advance industry practices.
 
-Besides my experience in software development, operations and product management, I have 
-a passion for data analytics, as supported by my qualifications in digital signal processing and 
-machine learning. 
+Living a balanced life is essential to me. I thrive on personal growth through mountain
+biking, running, and music. Whether performing on stage with a cappella groups, playing
+the piano, or racing my mountain bike, my love for music and sports allows me to recharge
+and remain inspired for the challenges ahead.
 
-I believe it is important to engage with the ICT community on a regular basis and for that reason 
-I have participated by means of presentations, interviews and articles. 
+% I am a technologist and engineer by trade, with an appreciation for science. I have
+% an affinity for people and what matters to them. I need to work in a trusting, open
+% and collaborative environment.
 
-Living a balanced life is vital to me. I value spending time with friends and family. I compete in 
-mountain biking and running. My love for music allows me to escape from work in order to 
-revitalise. I play the piano, among other instruments, and enjoy on-stage performances for 
-a cappella singing.
+% I am intrinsically motivated and have solid analytical and mentoring skills. I value integrity.
+% I enjoy solving problems while finding a balance between what the business or customer
+% needs vs. implementing a sustainable solution.
+
+% I have managed several teams and successfully delivered projects over more than 20 years
+% using pragmatic agile principles. I have a passion for process and system automation, and
+% software quality. I have significant experience in these areas and drive this with every team
+% that I've been involved with or lead.
+
+% My technical domain knowledge entails the design and implementation of distributed, highly
+% concurrent systems as applied in the fields of social media, location-based services, value-added
+% services, system integration and e-commerce. I know a variety of programming languages and modern
+% technologies. Besides software architecture, I'm also well versed in business analysis and
+% business process modelling. I have contributed to start-ups three times, experienced a major sale
+% of shares and an acquisition, while being on the due diligence team on both occasions.
+
+% Besides my experience in software development, operations and product management, I have
+% a passion for data analytics, as supported by my qualifications in digital signal processing and
+% machine learning.
+
+% I believe it is important to engage with the ICT community on a regular basis and for that reason
+% I have participated by means of presentations, interviews and articles.
+
+% Living a balanced life is vital to me. I value spending time with friends and family. I compete in
+% mountain biking and running. My love for music allows me to escape from work in order to
+% revitalise. I play the piano, among other instruments, and enjoy on-stage performances for
+% a cappella singing.
+
+\begin{center}
+  {\textit{\color{subheading}Please turn over to explore my professional experience and contribution highlights.}}
+\end{center}
 
 \pagebreak
 
-\cvsubsection{Current Position}
-\cvsubsubsection{Takealot Online (RF) (Pty) Ltd}
-\noindent \href{http://www.takealot.com/}{Takealot} is South Africa's largest online retailer. 
+\cvsubsection{\color{subheading}Current Position}
+\cvsubsubsection{\color{subheading}Takealot Online (RF) (Pty) Ltd}
+\noindent \href{http://www.takealot.com/}{Takealot.com} is South Africa's largest e-commerce retailer.
 
 \begin{cvenv}
   \cvitem{Engineering Director \& \\ General Manager \\ (Dec.~2015--)}
-         {Engineering Director (Software Development Manager (SDM) until July 2017) 
-          for the Catalogue, Machine Learning and Retail teams and General Manager (GM) 
-          for Takealot's Stellenbosch office, a strategic initiative. I am responsible for 
-          leading these teams to develop a large-scale e-commerce platform using agile practices, 
-          with a strong background in system architecture and engineering best practices.}
+         {As the Engineering Director (initially serving as Software Development Manager until
+          July 2017) – and General Manager for Takealot.com's Stellenbosch office (a strategic
+          initiative) — I am responsible for leading 13 teams (60 people) in developing a
+          large-scale e-commerce platform. My work is grounded in agile practices, system
+          architecture expertise, and a commitment to engineering excellence, with a focus
+          on applying machine learning to drive data-driven decision-making, optimise operations,
+          and enhance customer experiences.}
   \cvitem{Contribution Highlights}
-         {Machine Learning \\
-            \cvitembullet Architecting a modern ML platform \\
-            \cvitembullet Improving search and faceting \\
-            \cvitembullet Recommendations \\
-            \cvitembullet Customer behaviour, lifetime analysis and segmentation \\
-            \cvitembullet Stock management and replenishment \\
-            \cvitembullet Food delivery forecasting \\
-            \cvitembullet Catalogue data quality \\
-            \cvitembullet Event tracking system for analytics and metrics \\
-            \cvitembullet A/B testing platform \\
-            \cvitembullet Data pipelining and warehousing \\
-          Catalogue \\
-      		  \cvitembullet Pivotal in defining and executing on an architectural roadmap for  
-      		  \cvitempbullet the catalogue systems to improve system scalability, consistency 
-      		  \cvitempbullet and reliability \\
-      		  \cvitembullet Revamping Product Information Management (PIM) \\
-      		  \cvitembullet Consolidation of inbound feeds for stock, pricing and metadata 
-      		  \cvitempbullet (ETL) and outbound marketing feeds \\
-      		  \cvitembullet Data quality and curation (Master Data Management) \\
-          Retail \\
-            \cvitembullet Pricing and Stock Management at scale, using dynamic pricing 
-            \cvitempbullet models \\
-            \cvitembullet Buyer process optimisation \\
-            \cvitembullet Competitive pricing analysis \\
-            \cvitembullet Dynamic pricing and price elasticity \\
-            \cvitembullet Promotional management \\
-          Marketplace \\
-            \cvitembullet Seller portal and third-party API \\
-          Business Systems \\
-            \cvitembullet Customer support portal \\
-            \cvitembullet A multitude of internal portals \\
-    		  General Management \\
-      		  \cvitembullet Setting up a satellite software development office in Stellenbosch
-      		  \cvitempbullet Business case, budgeting, recruitment, functional design,
-            \cvitempbullet facilities management \\
-      		  \cvitembullet Recruitment: Process automation, interviewing question database,  
-      		  \cvitempbullet graduate programmes, career fairs, onboarding \\
-      		  \cvitembullet Development practices and processes, including the introduction 
-      		  \cvitempbullet of agile development, continuous integration and other forms of 
-      		  \cvitempbullet automation \\
-            \cvitembullet Career framework development \\
-      		  \cvitembullet Creating teams \\ %Team culture
-      		  \cvitembullet Facilitation, mentorship and practical performance management \\
-            \cvitembullet Diversity and inclusion
+         {Machine Learning
+           \cvitembullet{Directed the architecture of a modern ML platform, ensuring
+             scalability, reliability, and alignment with organisational goals.}
+           \cvitembullet{Guided teams to improve search functionality and faceting,
+             focusing on enhancing user experience and product discovery.}
+           \cvitembullet{Development of recommendation systems to improve user experience.}
+           \cvitembullet{Defined and endorsed strategies for customer behavior analysis,
+             lifetime value assessment, and segmentation to support
+             data-driven decision-making across the business.}
+           \cvitembullet{Steered efforts to optimise stock management and replenishment
+             by leveraging machine learning models, improving accuracy and
+             efficiency in operations.}
+           \cvitembullet{Oversaw the development of predictive models for food delivery
+             forecasting to enhance operational precision.}
+           \cvitembullet{Enabled initiatives for improving catalogue data quality by
+             advocating for advanced ML-driven solutions.}
+           \cvitembullet{Led the rollout of a user event tracking system for
+             analytics and metrics.}
+           \cvitembullet{Facilitated the design of an A/B testing platform for search and
+             recommendation models.}
+           \cvitembullet{Directed data pipelining and warehousing initiatives, ensuring
+             robust infrastructure for analytics and scalability, prior to the
+             creation of dedicated data engineering and analytics teams.}
+          Catalogue Management
+            \cvitembullet{Defined and executed a system and information architecture roadmap
+             for catalogue systems, driving improvements in scalability, consistency,
+             system reliability, extensibility and maintainability.}
+            \cvitembullet{Championed the implementation of Master Data Management (MDM)
+             solutions to ensure consistent, high-quality product data as the foundation,
+             and oversaw the revamp of Product Information Management (PIM) systems to streamline
+             workflows and enrich customer-facing product information.}
+            \cvitembullet{Led the consolidation of inbound feeds (stock, pricing, and
+             metadata) and outbound marketing feeds, focusing on efficiency
+             in ETL processes.}
+            \cvitembullet{Directed the high-level technical design of TakealotNOW, Takealot.com's
+             darkstore concept, enabling sub-hour deliveries via Takealot.com, and led the
+             integration of Takealot.com's catalogue with the MrD platform to support TakealotNOW
+             operations.}
+         }
+  \cvitem{Contribution Highlights (cont.)}
+         {Retail Operations
+            \cvitembullet{Led the design of pricing and stock management systems to support
+             scalability and operational efficiency.}
+            \cvitembullet{Participated in due diligence efforts to evaluate and select a business
+             partner for dynamic pricing, price elasticity modeling, and competitor pricing analysis.}
+            \cvitembullet{Directed the development of supplier portals to streamline supplier
+             interactions and management.}
+            \cvitembullet{Oversaw the creation of a promotional briefing portal, enabling
+             seamless coordination and execution of promotional campaigns.}
+            \cvitembullet{Supervised the development of systems for serving deals at scale,
+             ensuring reliability and performance under high demand.}
+          Seller Marketplace
+             \cvitembullet{Led the restructuring of the development team to enhance efficiency and
+              delivery by implementing stricter prioritisation, defining clear roles, improving
+              collaboration and processes, reducing software legacy, driving down the incident rate
+              and strengthening the team by recruiting experienced developers.}
+             \cvitembullet{Championed the growth of the marketplace ecosystem by redefining and
+              enhancing the public Marketplace API to better support sellers and integrators,
+              extending beyond the traditional seller portal.}
+             \cvitembullet{Oversaw the development of the seller portal, for features like product
+              and offer management, account management, fulfillment, returns, disbursements,
+              advertising, and seller funding, among others.}
+          Business Systems
+             \cvitembullet{Advocated for and oversaw the automation of customer product reviews,
+              reducing manual effort, ensuring consistency, and significantly accelerating the
+              display of reviews on the platform, enhancing user feedback, engagement and conversion
+              rates.}
+             \cvitembullet{Provided technical expertise in building TakealotMORE, Takealot.com's
+              customer subscription and benefits service, contributing to customer retention and
+              growth.}
+             \cvitembullet{Oversaw the integration of third-party loyalty plans, such as FNB's
+              eBucks and Discovery Miles, along with credit notes and customer invoices for purchases
+              made on Takealot.com.}
+             \cvitembullet{Oversaw customer donations to \href{https://www.beautifulgatesouthafrica.org/}{Beautiful Gate},
+              a non-profit, as part of the Corporate Social Investment programme.}
+             \cvitembullet{Implemented streamlined processes for handling POPI (Protection of Personal
+              Information) requests, ensuring compliance with data privacy standards.}
+             \cvitembullet{Oversaw the development and launch of Takealot.credit, a white-labeled
+              version of Mobicred, providing customers with flexible payment and financing options.}
+             \cvitembullet{Oversaw the expansion of B2B integration efforts, such as corporate
+              voucher issuance and management, driving Takealot.com's entry into adjacent domains and
+              business markets.}
+          }
+  \cvitem{Contribution Highlights (cont.)}
+         {Customer Services
+             \cvitembullet{Oversaw the development and continuous enhancement of the customer support
+              portal used by call centre support agents, improving efficiency and agent productivity.}
+             \cvitembullet{Managed the integration of the customer support portal with Zendesk,
+              ensuring a seamless and unified support experience.}
+             \cvitembullet{Advocated for the chatbot initiative within the customer help centre,
+              providing customers with a searchable knowledge base and leveraging generative AI/LLM
+              technology to promote self-help and reduce call centre contacts.}
+             \cvitembullet{Led the creation of a customer order tracking pipeline, providing real-time
+              feedback to both call centre agents and customers, enhancing transparency and support
+              quality.}
+          General Management
+             \cvitembullet{Established a satellite software development office in Stellenbosch, overseeing
+              all aspects including business case creation, budgeting, recruitment, functional design, and
+              facilities management. Successfully housed and supported 40 engineers.}
+             \cvitembullet{Streamlined recruitment processes by defining the interview framework, automating
+              key processes, building an interview question database, attending career fairs, and creating
+              a comprehensive onboarding experience.}
+             \cvitembullet{Gained extensive interview experience, having interviewed hundreds of candidates,
+              including screening, technical, culture fit, and executive-level interviews, also outside of
+              the engineering and product management domains.}
+             \cvitembullet{Designed and led five graduate programmes to prepare university graduates for
+              the work environment through structured training, coursework, exposure to various business
+              domains, and hands-on project work.}
+             \cvitembullet{Implemented modern development practices and processes, including introducing
+              agile methodologies, continuous integration, and other forms of automation to enhance delivery
+              efficiency and quality.}
+             \cvitembullet{Contributed to the creation and extension of a comprehensive career framework
+              to provide engineers and managers with clear role expectations and progression paths.}
+             \cvitembullet{Built several teams from the ground up, while reorganising and restructuring
+              existing teams to address business needs, undertake projects, and streamline operations.}
+             \cvitembullet{Provided ongoing facilitation, mentorship, and practical performance management
+              to ensure team growth and success.}
+             \cvitembullet{Advocated for and promoted diversity and inclusion initiatives to create a more
+              equitable and inclusive workplace.}
+        }
+\end{cvenv}
+
+\pagebreak
+
+\cvsubsection{\color{subheading}Employment History}
+\cvsubsubsection{\color{subheading}Praelexis (Pty) Ltd}
+\noindent \href{http://www.praelexis.com/}{Praelexis} is a a machine learning and predictive
+analytics company that develop solutions based on advanced mathematical models and
+business principles to find and explain hidden patterns and associations in data.
+
+\begin{cvenv}
+  \cvitem{Lead Architect and Data Scientist \\ (Sep.~2013--Nov.~2015)}
+         {A start-up all-rounder role encompassing team building, system architecture, product development,
+          hands-on machine learning, strategic planning, organisational structuring, and mentorship.}
+  \cvitem{Contribution Highlights}
+         {Domains
+            \cvitembullet{Health care: Implemented solutions to detect fraud, waste, and abuse in healthcare claims.}
+            \cvitembullet{Education: Developed learner interventions and established data warehousing strategies to analyse enrolment and examination results, including provincial matric performance.}
+            \cvitembullet{Supply chains: Developed predictive models for inventory management and optimisation.}
+            \cvitembullet{Mining: Introduced predictive maintenance frameworks to improve mining equipment efficiency.}
+            \cvitembullet{Banking: Delivered confidential innovation solutions for two of South Africa's largest commercial banks, ensuring competitive advantage.}
+          Products
+            \cvitembullet{Created a bespoke online education portal for descriptive analytics, machine learning, and data science.}
+          Projects
+            \cvitembullet{Engineered a scalable data workflow management system and an extensible ETL platform to support machine learning workflows and data warehousing.}
+            \cvitembullet{Developed an in-house framework for automated testing of data workflows for continuous integration and delivery.}
+          Platforms
+            \cvitembullet{Integrated and utilised SCADA, IBM Watson, Microsoft Azure Machine Learning, AWS, Spark, and Hadoop.}
+          General Management
+            \cvitembullet{Developed a cross-functional team practising agile principles.}
+            \cvitembullet{Implemented general operational management processes.}
+            \cvitembullet{Oversaw and drove business and technical strategic decision-making.}
           }
 \end{cvenv}
 
 \pagebreak
 
-\cvsubsection{Employment History}
-\cvsubsubsection{Praelexis (Pty) Ltd}
-\noindent \href{http://www.praelexis.com/}{Praelexis} is a a machine learning and predictive 
-analytics company that develop solutions based on advanced mathematical models and known 
-business principles to find and explain hidden patterns and associations in data. 
-
-\begin{cvenv}
-  \cvitem{Lead Architect and Data Scientist \\ (Sep.~2013--Nov.~2015)}
-         {Start-up all-rounder responsible for building the team, overall system architecture,  
-         product development, hands-on machine learning, strategic thinking and organisational
-	       structure and mentoring.}
-  \cvitem{Contribution Highlights}
-         {Domains \\ 
-          \cvitembullet Health care: Fraud, waste and abuse detection \\
-          \cvitembullet Education: Learner interventions, data warehousing \\
-          \cvitembullet Supply chains: Inventory management and optimisation \\
-          \cvitembullet Mining: Predictive maintenance \\
-          \cvitembullet Banking: Confidential innovation work for two of South Africa's 
-          \cvitempbullet largest banks \\
-          Products \\
-          \cvitembullet Bespoke online education portal for descriptive analytics,  
-          \cvitempbullet machine learning and data science \\
-          Projects \\
-          \cvitembullet A bespoke, scalable workflow management system and extensible 
-          \cvitempbullet platform for ETL, data warehousing and machine learning \\
-          \cvitembullet An in-house framework for automated testing of data workflows \\
-          General Management \\
-          \cvitembullet Building a cross-functional team that operates on agile principles \\
-          \cvitembullet General operational management \\
-          \cvitembullet Business and technical strategic decision making \\
-          Third-party Systems \\
-          \cvitembullet SCADA, IBM Watson, Microsoft Azure Machine Learning, AWS,
-          \cvitempbullet Spark, Hadoop
-          }
-\end{cvenv}
-
-\cvsubsubsection{MXit Lifestyle (Pty) Ltd}
+\cvsubsubsection{\color{subheading}MXit Lifestyle (Pty) Ltd}
 \noindent \href{http://www.mxit.com/}{MXit Lifestyle} provides a social network and mobile
           instant messaging (IM) platform named MXit, Africa's first and largest. The
           company grew from 20 employees in 2005 to its peak size of 150
-          employees. The platform services millions of active users and beyond IM,
-          it provides users with services for information, education, games, community 
-          support, and developers with a platform for building applications and much more. 
+          employees. The platform serviced millions of active users and beyond IM,
+          it provided users with services for information, education, games, community
+          support, and developers with a platform for building applications and more.
           % \includegraphics[scale=0.4,bb=0 0 55 22]{MXit_Lifestyle_Logo_B&W_Small.png}
-\\[-3em]
+% \\[-3em]
 
 \begin{cvenv}
-  \cvitem{}{} % hack to fix spacing problem
-  
+  % \cvitem{}{} % hack to fix spacing problem
+
   \cvitem{Head of Enterprise Architecture \\ (Aug.~2010--Aug.~2013)}
          {Building and managing the architecture competency for MXit with regard to
-         business, information and system architecture for the alignment of goals, 
-         objectives and processes. Specific attention is paid to best practices, business 
-         intelligence, procedures, standards and automation. Continual design and 
-         development of several large-scale systems. Managing and building an architecture
-         team of two people and a business intelligence team of six people.}
+          business, information and system architecture for the alignment of goals,
+          objectives and processes. Specific attention is paid to best practices, business
+          intelligence, procedures, standards and automation. Continual design and
+          development of several large-scale systems. Managing and building an architecture
+          team of two people and a business intelligence team of six people.}
   \cvitem{Contribution Highlights}
-         {Projects \\
-         \cvitembullet Developer Ecosystem: Team lead, design and implementation 
-         \cvitempbullet of an app store and all supporting systems; team of 4 people \\
-         \cvitembullet Technical lead of APIs for platform and application developers \\
-         \cvitembullet Value-Added Services (VAS) switch for aggregating VAS providers 
-         \cvitempbullet for airtime and electricity payments: Team lead, design and 
-         \cvitempbullet implementation; team of 4 people \\
-         Business Intelligence/Data Science \\
-         \cvitembullet User data warehouse and mathematical models for churn analysis: 
-         \cvitempbullet Design and technical lead \\
-         \cvitembullet Consolidation of legacy reporting systems and reports \\
-         \cvitembullet Redesign and replacing legacy reporting systems with modern and 
-         \cvitempbullet automated technologies \\
-         \cvitembullet Assisting the product team with deep analyses and report 
-         \cvitempbullet definitions \\
-         Other \\
-         \cvitembullet Defining the vision and mission for \href{http://www.ponderingpanda.com/}{Pondering Panda}, MXit's
-         \cvitempbullet consumer insights company \\
-         \cvitembullet Steering committee convenor (2011) \\
-         \cvitembullet Assisting auditors regarding data analysis, control checks and 
-         \cvitempbullet corporate governance \\
-         \cvitembullet Internal representative for technical due diligence during the 
-         \cvitempbullet acquisition by \href{http://www.worldofavatar.com/}{World of Avatar (Pty) Ltd} \\
-         \cvitembullet In-house notification system (hardware and software) for notifying 
-         \cvitempbullet developers of broken builds from the build server using a USB
-         \cvitempbullet LED device (personal project)
-         \\}
+         {Projects
+            \cvitembullet{Developer Ecosystem: Team lead, design and implementation
+             of an app store and all supporting systems; team of 4 people.}
+            \cvitembullet{Technical lead of APIs for platform and application developers.}
+            \cvitembullet{Value-Added Services (VAS) switch for aggregating VAS providers
+              for airtime and electricity payments: Team lead, design and
+              implementation; team of 4 people.}
+          Business Intelligence/Data Science
+            \cvitembullet{User data warehouse and mathematical models for churn analysis:
+              Design and technical lead.}
+            \cvitembullet{Consolidation of legacy reporting systems and reports.}
+            \cvitembullet{Redesign and replacement of legacy reporting systems with modern and
+              automated technologies.}
+            \cvitembullet{Assisting the product team with business analysis and report
+              definitions.}
+          Other
+            \cvitembullet{Defining the vision and mission for \href{http://www.ponderingpanda.com/}{Pondering Panda}, MXit's
+              consumer insights company.}
+            \cvitembullet{Steering committee convenor (2011).}
+            \cvitembullet{Assisting auditors regarding data analysis, control checks, and
+              corporate governance.}
+            \cvitembullet{Internal representative for technical due diligence during the
+              acquisition by \href{http://www.worldofavatar.com/}{World of Avatar (Pty) Ltd}.}
+            \cvitembullet{In-house notification system (hardware and software) for notifying
+              developers of broken builds from the build server using a USB
+              LED device (personal project).}
+         }
+\end{cvenv}
+
+\pagebreak
+
+\begin{cvenv}
   \cvitem{Software Architect \\ (Dec.~2008--Jul.~2010)}
-         {Architecture and analysis of software products and systems across five 
-          development teams (40 developers) and enterprise-wide business processes, with 
-          special focus on development processes and automation; System architecture 
+         {Architecture and analysis of software products and systems across five
+          development teams (40 developers) and enterprise-wide business processes, with
+          special focus on development processes and automation; System architecture
           regarding large-scale client-server, distributed and fault-tolerant systems;
-          Steering committee member for approval of development requests; Frequent 
+          Steering committee member for approval of development requests; Frequent
           liaising with external parties, including business partners and legal advisors.}
   \cvitem{Contribution Highlights}
-         {General \\
-          \cvitembullet Scrum/Agile practitioner \\
-          \cvitembullet Business/Requirements Analysis and Scrum story writing \\
-          \cvitembullet Software Development Life Cycle (SDLC): Design and 
-          \cvitempbullet implementation of several SDLCs regarding process, procedures 
-          \cvitempbullet and document artifacts \\
-          Development environment \\
-          \cvitembullet Procedures and administration of all code repositories, issue 
-          \cvitempbullet tracking, continuous integration and other automation systems, 
-          \cvitempbullet and internal documentation wiki \\
-          \cvitembullet Organising formal Test-Driven Development training \\
-          Products \\
-	  \cvitembullet Idols SA Voting Platform: Design and technical lead \\
-          \cvitembullet MXit EVO client application suite: Product Owner and managing
-          \cvitempbullet an outsourced development team of three people, including 
-          \cvitempbullet contract negotiations \\
-          \cvitembullet Suggest-a-Friend recommendation system: Design \\
-          \cvitembullet Fantasy league game for the 2010 FIFA Soccer World Cup: Design \\
-          \cvitembullet Credit topup and banking integration system: Design \\
-          \cvitembullet MXit third-party developer SDK: Conceptual design \\
-          Other \\
-          \cvitembullet Conducting developer interviews and technical inductions \\}
+         {General
+            \cvitembullet{Scrum/Agile practitioner.}
+            \cvitembullet{Business/Requirements analysis and Scrum story writing.}
+            \cvitembullet{Software Development Life Cycle (SDLC): Designed and implemented
+            several SDLCs focusing on processes, procedures, and document artefacts.}
+          Development Environment
+            \cvitembullet{Managed procedures and administration of all code repositories, issue
+             tracking, continuous integration, and other automation systems, along with
+             maintaining an internal documentation wiki.}
+            \cvitembullet{Organised formal Test-Driven Development training sessions.}
+          Products
+            \cvitembullet{Idols SA Voting Platform: Design and technical lead.}
+            \cvitembullet{MXit EVO client application suite: Product Owner and managed an
+             outsourced development team of three people, including contract negotiations.}
+            \cvitembullet{Suggest-a-Friend recommendation system: Design.}
+            \cvitembullet{Fantasy league game for the 2010 FIFA Soccer World Cup: Design.}
+            \cvitembullet{Credit top-up and banking integration system: Design.}
+            \cvitembullet{MXit third-party developer SDK: Conceptual design.}
+          Other
+            \cvitembullet{Conducted developer interviews and technical inductions.}
+         }
   \cvitem{Team Lead \\ (Oct.~2006--Nov.~2008)}
-         {Managing a team of two people for services development, a team of two people for 
-          \href{http://www.process-one.net/en/ejabberd/}{ejabberd} development and a team 
-          of two people for ejabberd operational support; 
+         {Managing a team of two people for services development, a team of two people for
+          \href{http://www.process-one.net/en/ejabberd/}{ejabberd} development and a team
+          of two people for ejabberd operational support;
           Retain previous role as lead developer for the Jabber/XMPP IM core.}
   \cvitem{Contribution Highlights}
-          {Products \\
-           \cvitembullet Content portal for content delivery by platform integrators: 
-           \cvitempbullet Design and team lead; system is a major source of revenue \\ 
-           \cvitembullet Dynamic chatrooms: Redesign and team lead \\
-           \cvitembullet Premium Rated SMS integration system: Design and development \\
-           \cvitembullet Developing the ejabberd IM platform \\
-           Training \\
-           \cvitembullet Erlang/OTP training of new employees \\
-           \cvitembullet Jabber/XMPP training of new employees \\
-           Other \\
-           \cvitembullet Defining and implementing a 3-tier operational support structure \\
-           \cvitembullet Maintaining the relationship with 
-                    \href{http://www.process-one.net/en/}{Process-One}, the maintainers  
-           \cvitempbullet of ejabberd \\
-           \cvitembullet Internal representative for technical due diligence during sale of 
-           \cvitempbullet shares to \href{http://www.naspers.com/}{MIH Holdings (Pty) Ltd (Naspers)}}
+         {Products
+            \cvitembullet{Managed, scaled, operationalised and extended the ejabberd IM platform.}
+            \cvitembullet{Content portal for content delivery by platform integrators:
+             Design and team lead; system served as a major source of revenue.}
+            \cvitembullet{Dynamic chatrooms: Redesign and team lead.}
+            \cvitembullet{Premium Rated SMS integration system: Design and development.}
+          Training
+            \cvitembullet{Provided Erlang/OTP training for new employees.}
+            \cvitembullet{Delivered Jabber/XMPP training for new employees.}
+          Other
+            \cvitembullet{Defined and implemented a 3-tier operational support structure.}
+            \cvitembullet{Maintained the relationship with
+             \href{http://www.process-one.net/en/}{Process-One}, the maintainers of ejabberd.}
+            \cvitembullet{Served as the internal representative for technical due diligence during
+             the sale of shares to \href{http://www.naspers.com/}{MIH Holdings (Pty) Ltd (Naspers)}.}
+         }
 \end{cvenv}
+
+\pagebreak
 
 \begin{cvenv}
   \cvitem{Software Engineer \\ (Dec.~2005--Sep.~2006)}
-         {Lead developer for the Jabber/XMPP IM core based on the 
+         {Lead developer for the Jabber/XMPP IM core based on the
           \href{http://www.process-one.net/en/ejabberd/}{ejabberd} Open Source platform.}
   \cvitem{Contribution Highlights}
-         {Products \\
-          \cvitembullet ejabberd: Development, operational support \\
-          \cvitembullet Advertising platform: Design and development for delivering 
-          \cvitempbullet text-based and graphical impressions to mobile phones using a 
-          \cvitempbullet custom in-house modelling system with adaptive prediction of 
-          \cvitempbullet available inventory; system is still the main source of revenue \\
-          Operational \\
-          \cvitembullet 24/7 standby and support \\
-          \cvitembullet Server setup and fine tuning (Linux/Windows) \\
-          \cvitembullet Maintaining the relationship with 
-                   \href{http://www.process-one.net/en/}{Process-One}, the maintainers of 
-          \cvitempbullet ejabberd}
+         {Products
+            \cvitembullet{ejabberd: Managed, scaled, operationalised and extended the platform.}
+            \cvitembullet{Advertising platform: Designed and developed a system for delivering
+                          text-based and graphical impressions to mobile phones using a custom
+                          in-house modelling system with adaptive prediction of available inventory.
+                          The system remains the main source of revenue.}
+          Operational
+            \cvitembullet{Provided 24/7 standby and support for critical operations.}
+            \cvitembullet{Performed server setup and fine-tuning across Linux and Windows environments.}
+            \cvitembullet{Maintained the relationship with
+                          \href{http://www.process-one.net/en/}{Process-One}, the maintainers of ejabberd.}}
 \end{cvenv}
 
-\cvsubsubsection{Cellfind (Pty) Ltd}
-\noindent \href{http://www.cellfind.co.za/}{Cellfind} is a Wireless Access Service Provider (WASP) that specialises in 
-Location-Based Services (LBS), such as Look4me, Look4help and asset vehicle tracking. It 
-also provides services for mobile content delivery (Lucky Mobile, Fresh Mobile and more). 
+\cvsubsubsection{\color{subheading}Cellfind (Pty) Ltd}
+\noindent \href{http://www.cellfind.co.za/}{Cellfind} is a Wireless Access Service Provider (WASP)
+that specialises in Location-Based Services (LBS), such as Look4me, Look4help and asset vehicle
+tracking. It also provides services for mobile content delivery (Lucky Mobile, Fresh Mobile and more).
 \begin{cvenv}
   \cvitem{Software Engineer \\ (Jan.~2005--Nov.~2005)}
-         {Lead developer for Cellfind's LBS product suite, including  
-         \href{http://www.look4me.co.za/}{Look4me}, a peace of mind 
-         service to locate friends and family, and  
-         \href{http://www.look4help.co.za/}{Look4help}, a mobile panic 
+         {Lead developer for Cellfind's LBS product suite, including
+         \href{http://www.look4me.co.za/}{Look4me}, a peace of mind
+         service to locate friends and family, and
+         \href{http://www.look4help.co.za/}{Look4help}, a mobile panic
          button to send a distress message with your location to friends and family.}
   \cvitem{Contribution Highlights}
-         {Development, design, operational and customer support}
+         {Development, design, operational and customer support; redesigned and rebuilt Look4me
+          from the ground up, including a request queueing mechanism for reliability.}
 \end{cvenv}
 
 %\cvsubsubsection{Oxford Brookes University}
@@ -484,26 +642,26 @@ also provides services for mobile content delivery (Lucky Mobile, Fresh Mobile a
 %  \cvitem{Research Associate \\ Nov.~2004}{Offer declined}
 %\end{cvenv}
 
-\cvsubsubsection{SWiST Group Technologies (Pty) Ltd}
+\cvsubsubsection{\color{subheading}SWiST Group Technologies (Pty) Ltd}
 \noindent SWiST (acquired by Altech) is a software development house that specialises in large-scale storage of
 caller data (Datavoir) and fraud systems. The mobile instant messenger service named MXit was
-born in its research and development department. 
+born in its research and development department.
 \begin{cvenv}
   \cvitem{Junior Developer \\ (Contractor) \\ (Dec.~2001--Jan.~2002)}
-         {Unit testing of GSM messaging ANSI C libraries}
+         {Unit testing of GSM messaging ANSI C libraries.}
 \end{cvenv}
 
-\cvsubsubsection{Stone Three Signal Processing (Pty) Ltd}
-\noindent \href{http://www.stonethree.com/}{Stone Three} specialises, among other things, in image processing solutions 
-for major players in the mining industry such as Anglo American and the De Beers group. 
+\cvsubsubsection{\color{subheading}Stone Three Signal Processing (Pty) Ltd}
+\noindent \href{http://www.stonethree.com/}{Stone Three} specialises, among other things, in image processing solutions
+for major players in the mining industry such as Anglo American and the De Beers group.
 \begin{cvenv}
   \cvitem{Junior Developer \\ (Contractor) \\ (Dec.~2000--Jan.~2001)}
-         {Developed a prototype optical motion sensor to detect the velocity of moving froth}
+         {Developed a prototype optical motion sensor to detect the velocity of moving froth for mining applications.}
 \end{cvenv}
 
 \pagebreak
 
-\cvsubsection{Courses and Training Attended}
+\cvsubsection{\color{subheading}Courses and Training Attended}
 \begin{cvenv}
   \cvitem{2010}{Formal Test-Driven Development Course}
   \cvitem{2010}{Naspers Harvard Business School Programme on Strategy}
@@ -512,14 +670,14 @@ for major players in the mining industry such as Anglo American and the De Beers
   \cvitem{2008}{Formal Unified Modeling Language Course}
 \end{cvenv}
 
-\cvsubsection{Professional Memberships}
+\cvsubsection{\color{subheading}Professional Memberships}
 \begin{cvenv}
   \cvitem{2009--2011}{Member of the Scrum Alliance Society}
   \cvitem{2011--2015}{Member of the IEEE and IEEE Computer Society}
   \cvitem{2005--2009}{Member of the IEEE and IEEE Signal Processing Society}
 \end{cvenv}
 
-\cvsubsection{Interviews, Presentations and Community Involvement}
+\cvsubsection{\color{subheading}Interviews, Presentations and Community Involvement}
 \begin{cvenv}
   \cvitem{2024}{A CTO’s Playbook: Avoiding salary mistakes that will cost you developers in 2024 (OfferZen Webinar)}
   \cvitem{2023}{Guest Lecture: Red \& Yellow Creative School of Business}
@@ -529,20 +687,20 @@ for major players in the mining industry such as Anglo American and the De Beers
                 {How takealot.com is scaling their developer team} (OfferZen)}
   \cvitem{2016}{Back to Basics Meetup: Data Structures and Order Complexity}
   \cvitem{2014}{Workshop for grade 11 learners on Computer Science as a career}
-  \cvitem{2012}{Presentation to high school pupils on Software Engineering at 
+  \cvitem{2012}{Presentation to high school pupils on Software Engineering at
                 Stellenbosch University Engineering Faculty's Winter School programme}
   \cvitem{2012}{Hack Stellenbosch Meetup: Having Fun with Continuous Integration}
   \cvitem{2011}{Bushradio 89.5fm: On the history of MXit}
   \cvitem{2010}{Participant in the 2010 Cape IT Initiative (CITi) Colloquium on Agile in the Enterprise}
   \cvitem{2010}{Cape Argus Newspaper: Software engineering is `pure thought-stuff' creativity}
-  \cvitem{2006}{The Citizen Newspaper (orig. transl.: Die Burger): Engineers create a bright 
+  \cvitem{2006}{The Citizen Newspaper (orig. transl.: Die Burger): Engineers create a bright
                 future for themselves and fellow beings}
 \end{cvenv}
 
 \pagebreak
 
-\cvsubsection{Proficiencies}
-\cvsubsubsection{Programming}
+\cvsubsection{\color{subheading}Proficiencies}
+\cvsubsubsection{\color{subheading}Programming}
 \begin{cvenv}
   \cvitem{Languages}{ANSI C/\cpp, \cs, Erlang/OTP, Python, Java, PHP, SQL, \\
                      Node.js, x86 Assembler, PIC C, VHDL}
@@ -551,22 +709,22 @@ for major players in the mining industry such as Anglo American and the De Beers
   \cvitem{Scientific}{MATLAB, Octave, Pylab (SciPy, NumPy, scikit-learn, Pandas)}
 \end{cvenv}
 
-\cvsubsubsection{Quality}
+\cvsubsubsection{\color{subheading}Quality}
 \begin{cvenv}
-  \cvitem{Versioning Systems}{Git, Github, Bitbucket, Subversion, CVS}
+  \cvitem{Versioning Systems}{Git, GitHub, Bitbucket, Subversion, CVS}
   \cvitem{Testing}{MSTest, NUnit, JUnit, Python Nose, PHPUnit, XUnit, Selenium, Mocha, Karma}
   \cvitem{Mock Frameworks}{NMock, Mockito, jMock, moq, PhantomJS}
   \cvitem{Code Coverage}{dotCover, Python Nose, Coverage.py, Istanbul}
-  \cvitem{Continuous Integration}{TeamCity, CruiseControl, CruiseControl.NET, Hudson, 
+  \cvitem{Continuous Integration}{TeamCity, CruiseControl, CruiseControl.NET, Hudson,
                                   Jenkins, uBuild, Buildbot}
   \cvitem{Web Automation}{CasperJS}
-  \cvitem{Code Quality}{ReSharper, StyleCop, FxCop, PEP8, several linters, 
+  \cvitem{Code Quality}{ReSharper, StyleCop, FxCop, PEP8, several linters,
                         code duplication tools, code coverage tools}
 \end{cvenv}
 
-\cvsubsubsection{Technologies}
+\cvsubsubsection{\color{subheading}Technologies}
 \begin{cvenv}
-  \cvitem{Platforms}{Linux (Debian and Red Hat-based), MS Windows, .NET \\ 
+  \cvitem{Platforms}{Linux (Debian and Red Hat-based), MS Windows, .NET \\
                      Familiar with OS X, iOS}
   \cvitem{RDBMSs}{MySQL, MS SQL Server, PostgreSQL, Greenplum, AWS Redshift, Google BigQuery}
   \cvitem{NoSQL}{Couchbase, Hadoop family, Titan Graph DB, Spark}
@@ -576,20 +734,21 @@ for major players in the mining industry such as Anglo American and the De Beers
   \cvitem{Web Frameworks}{ExpressJS, AngularJS, Django}
   \cvitem{Analytics}{Google Analytics, KISSmetrics}
   \cvitem{Cloud Services}{Google Cloud Platform, Amazon Web Services, Linode, Microsoft Azure}
-  \cvitem{Virtualisation}{VMWare, EC2, Docker}
+  \cvitem{Machine Learning}{Familiarity with Google Vertex, TFX, TensorFlow, DataForm}
+  \cvitem{Virtualisation}{VMWare, EC2, Docker, Kubernetes (familiarity)}
   \cvitem{Monitoring}{OpsGenie, Sensu}
-  \cvitem{Other}{Avro, Thrift, Luigi}
+  \cvitem{Other}{Avro, Thrift, Protocol Buffers, Spotify's Luigi, Apache Airflow}
 \end{cvenv}
 
-\cvsubsubsection{Tools}
+\cvsubsubsection{\color{subheading}Tools}
 \begin{cvenv}
   \cvitem{IDEs}{MS Visual Studio, Eclipse, PyCharm, WebStorm, IntelliJ, among others}
-  \cvitem{Management}{Jira, MS Project, Bugzilla, Mantis, YouTrack, Bugzilla, Zendesk}
+  \cvitem{Management}{Jira, MS Project, Bugzilla, Mantis, YouTrack, Zendesk}
   \cvitem{CASE}{Enterprise Architect, MS Visio for Enterprise Architects}
   \cvitem{Documentation}{MediaWiki, Confluence, Notion, MS Sharepoint, JavaDoc, JSDoc, Doxygen, etc.}
 \end{cvenv}
 
-\cvsubsubsection{Other}
+\cvsubsubsection{\color{subheading}Other}
 \begin{cvenv}
   \cvitem{Patterns}{RESTful services, SOA, GoF design patterns}
   \cvitem{Software Modelling}{UML2, ERD, BPMN, SOA}
@@ -600,40 +759,41 @@ for major players in the mining industry such as Anglo American and the De Beers
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% university %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cvsection{Achievements and Involvement}
-  \cvsubsection{Post-tertiary Level}
-    \cvsubsubsection{Leadership}
+\cvsection{\color{heading}Achievements and Involvement}
+  \cvsubsection{\color{subheading}Post-tertiary Level}
+    \cvsubsubsection{\color{subheading}Leadership}
     \begin{cvenv}
       \cvitem{2013--2017}{Chairman of the trustees for the Libert\'{e} residential complex,
                       responsible for managing a million rand budget for 50 sections}
       \cvitem{2009--2023}{Trustee for the Libert\'{e} residential complex}
       \cvitem{2007--2013}{Trustee of the MXit Lifestyle workers trust}
     \end{cvenv}
-    \cvsubsubsection{Cultural}
+    \cvsubsubsection{\color{subheading}Cultural}
       \begin{cvenv}
-        \cvitem{2015--}{Member of the Schola Cantorum Academic Choir}%\textit{}
+        \cvitem{2015--2017}{Member of the Schola Cantorum Academic Choir}%\textit{}
         \cvitem{2006--2012}{Member of the Stellenbosch Madrigal Singers}%\textit{}
         \cvitem{2007}{Member of the Novum Cantores Chamber Choir}%\textit{}
         \cvitem{2006}{Member of the Coristi Allegri Chamber Choir}%\textit{}
         \cvitem{2005}{Member of the Singkronies Chamber Choir}%\textit{}
       \end{cvenv}
-    \cvsubsubsection{Sport and Physical Activities}
+    \cvsubsubsection{\color{subheading}Sport and Physical Activities}
       \begin{cvenv}
         % note: mtb start 2013--
-        \cvitem{2023}{Western Provice XCO MTB Colours: XCO and XCM}
-        \cvitem{2022}{Western Provice XCO MTB Colours: XCO}
+        \cvitem{2023}{Western Provice Mountain Biking Colours: Cross-country Olympic and Marathon}
+        \cvitem{2022}{Western Provice Mountain Biking Colours: Cross-country Olympic}
         %\cvitem{2017}{Mountain biking personal best: \\ Sub 4-hours over 75km -- Stellenbosch MTB Challenge}
-        \cvitem{2017}{Mountain biking personal best: \\ Top 100 Argus Cape Town Cycle Tour MTB Challenge}
+        %\cvitem{2017}{Mountain biking personal best: \\ Top 100 Argus Cape Town Cycle Tour MTB Challenge}
+        \cvitem{2013--}{Several category top results and podiums in mountain biking}
         %\cvitem{2005--}{Social participation in running events; hiking}
         \cvitem{2008}{Summit Mt Kilimanjaro}% (Uhuru peak, 5985m amsl) on 6 Aug 2008 via the Machame route}
       \end{cvenv}
-    \cvsubsubsection{Other}
+    \cvsubsubsection{\color{subheading}Other}
       \begin{cvenv}
         \cvitem{2013--2019}{External examiner for master's theses at Stellenbosch University}
       \end{cvenv}
 
-  \cvsubsection{Tertiary Level}
-    \cvsubsubsection{Academic}
+  \cvsubsection{\color{subheading}Tertiary Level}
+    \cvsubsubsection{\color{subheading}Academic}
       \begin{cvenv}
         \cvitem{2005}{Honours for Meritorious Service (Stellenbosch University)}
 %        \cvitem[1]{2004}{Tutor for Mathematics 114 and 144}
@@ -644,7 +804,7 @@ for major players in the mining industry such as Anglo American and the De Beers
                      Systems \& Signals modules}
         \cvitem{2001}{Invited to the University's Top Achievers' Banquet}
       \end{cvenv}
-    \cvsubsubsection{Leadership}
+    \cvsubsubsection{\color{subheading}Leadership}
       \begin{cvenv}
         \cvitem{2003--2004}{Voice group lead: responsible for the acquisition of the
                             repertoire to the basses of the
@@ -658,7 +818,7 @@ for major players in the mining industry such as Anglo American and the De Beers
 
 %\pagebreak
 
-    \cvsubsubsection{Cultural}
+    \cvsubsubsection{\color{subheading}Cultural}
       \begin{cvenv}
         \cvitem{2002--2004}{Member of the Stellenbosch University Choir}
         \cvitem{2004}{Won the Mixed Youth Choir division at the Choir
@@ -680,9 +840,9 @@ for major players in the mining industry such as Anglo American and the De Beers
 
 %\pagebreak
 
-    \cvsubsubsection{Sport}
+    \cvsubsubsection{\color{subheading}Sport}
       \begin{cvenv}
-        \cvitem{2004}{Half marathon personal best 1h44} 
+        \cvitem{2004}{Half marathon personal best 1h44}
                       %(bronze medal, Safari half marathon, Wellington)
         \cvitem{Other}{Regular jogger and social participant in athletics (relays),
                        mountain biking and squash}
@@ -690,22 +850,22 @@ for major players in the mining industry such as Anglo American and the De Beers
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% school %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-  \cvsubsection{Primary and Secondary Level}
-    \cvsubsubsection{Academic}
+  \cvsubsection{\color{subheading}Primary and Secondary Level}
+    \cvsubsubsection{\color{subheading}Academic}
       \begin{cvenv}
         \cvitem{1998}{Academic merit awards (honours)}
         \cvitem[1]{1998}{Third round Old Mutual Mathematics Olympiad}
         \cvitem{1992}{National Winner: Soil Conservation Project (SANTAR)}
       \end{cvenv}
-    \cvsubsubsection{Leadership}
+    \cvsubsubsection{\color{subheading}Leadership}
       \begin{cvenv}
         \cvitem{1998}{Member of Student Council}
         \cvitem{1998}{Chairman of the Debating Society}
       \end{cvenv}
 
-    \cvsubsubsection{Cultural}
+    \cvsubsubsection{\color{subheading}Cultural}
       \begin{cvenv}
-        \cvitem{1998}{\href{http://www.unisa.ac.za/}{UNISA}\footnote{University of South Africa}: 
+        \cvitem{1998}{\href{http://www.unisa.ac.za/}{UNISA}\footnote{University of South Africa}:
                       Pass Grade 8 organ examination Cum Laude}
         \cvitem{1998}{UNISA: Pass Grade 8 piano examination with
                       Honourable Mention}
@@ -733,7 +893,7 @@ for major players in the mining industry such as Anglo American and the De Beers
         \cvitem[1]{1995}{Leading part in local production of Grease, the play}
       \end{cvenv}
 
-    \cvsubsubsection{Sport}
+    \cvsubsubsection{\color{subheading}Sport}
       \begin{cvenv}
         \cvitem[1]{1996--1998}{Participant in North Boland athletics championships}
         \cvitem{1998}{First rugby team}
@@ -749,7 +909,7 @@ for major players in the mining industry such as Anglo American and the De Beers
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% references %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cvsection{References}
+\cvsection{\color{heading}References}
 
 %\begin{cvenv}
 %  \cvitem{Mr.~A.T. Knott-Craig} % Jr
@@ -770,7 +930,7 @@ for major players in the mining industry such as Anglo American and the De Beers
 %%         {http://www.dsp.sun.ac.za/~dupreez/jadp\_cv/index.html}}
 %  \cvitem{Phone}{{\pp}27 (0)21 808 4342}
 %  \cvitem{E-mail}{\href{mailto:dupreez@dsp.sun.ac.za}{dupreez@dsp.sun.ac.za}}
-%  \cvitem{Capacity}{Study lead for M.Sc.Eng.~thesis}
+%  \cvitem{Capacity}{Study leader for M.Sc.Eng.~thesis}
 %\end{cvenv}
 
 % DAVE WEBER
@@ -796,7 +956,7 @@ for major players in the mining industry such as Anglo American and the De Beers
 \end{cvenv}
 
 \begin{cvenv}
-  \cvitem{Marnus~Freeman}{Technical Director at MXit Lifestyle (2005--2013} %(2010--2013)
+  \cvitem{Marnus~Freeman}{Technical Director at MXit Lifestyle (2005--2013)} %(2010--2013)
   %\cvitem{Company}{MXit Lifestyle (Pty) Ltd (\href{http://www.mxit.com/}{www.mxit.com})}
   \iftoggle{public}{}{%
     \cvitem{Phone}{{\pp}27 82 990 3910}
@@ -855,14 +1015,14 @@ for major players in the mining industry such as Anglo American and the De Beers
 
 \begin{cvenv}
   \cvitem{Francois~Swanepoel}{Chief Executive Officer at Stone Three Signal Processing}
-  %\cvitem{Company}{Stone Three Venture Technology (Pty) Ltd 
+  %\cvitem{Company}{Stone Three Venture Technology (Pty) Ltd
   %                 (\href{http://www.stonethree.com/}{www.stonethree.com})}
   \iftoggle{public}{}{%
     \cvitem{Phone}{{\pp}27 83 302 2282}
     \cvitem{E-mail}{\href{mailto:\swannie@stonethree.com}{\swannie@stonethree.com}}
   }
   %\cvitem{Period}{2000, 2009--2010}
-  \cvitem{Capacity}{Former colleague at Stone Three Signal Processing (2000) and business partner 
+  \cvitem{Capacity}{Former colleague at Stone Three Signal Processing (2000) and business partner
                     for outsourced development for MXit Lifestyle (2009--2010)}
 \end{cvenv}
 
@@ -874,7 +1034,7 @@ for major players in the mining industry such as Anglo American and the De Beers
     \cvitem{E-mail}{\href{mailto:\ben@dip.sun.ac.za}{\ben@dip.sun.ac.za}}
   }
   %\cvitem{Period}{2003--2004}
-  \cvitem{Capacity}{Study lead for M.Sc.Eng.~thesis at Stellenbosch University (2003--2004)}
+  \cvitem{Capacity}{Study leader for M.Sc.Eng.~thesis at Stellenbosch University (2003--2004)}
 \end{cvenv}
 
 \begin{cvenv}
@@ -891,7 +1051,9 @@ for major players in the mining industry such as Anglo American and the De Beers
 \end{cvenv}
 
 \iftoggle{public}{
-  \centerline{\emph{Contact details of references available on request.}}
+  \begin{center}
+    {\textit{\color{subheading}Contact details of references available on request.}}
+  \end{center}
 }{%
 }
 

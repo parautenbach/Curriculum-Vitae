@@ -31,28 +31,42 @@
 %\usepackage{tex4ht}
 % define hyperlink colour
 \usepackage{xcolor} %color/xcolor
-  \definecolor{darkblue}{RGB}{42,161,152}%{rgb}{0,0,0.55}
-  \definecolor{darkred}{rgb}{0.55,0,0}
-  \definecolor{background}{RGB}{253,249,237}
-  \definecolor{title}{RGB}{226,99,98}
-  \definecolor{default}{RGB}{87,87,87}%{237,232,212}
+  % % professional cobalt
+  % \definecolor{background}{HTML}{FFFFFF}
+  % \definecolor{left_margin}{HTML}{002147}
+  % \definecolor{heading}{HTML}{002147}
+  % \definecolor{subheading}{HTML}{0047AB}
+  % % \definecolor{hyperlink}{HTML}{008080}
+  % \definecolor{default}{HTML}{4A4A4A}
+  % modern indigo
+  \definecolor{background}{HTML}{F7F7F7}
+  \definecolor{left_margin}{HTML}{001F3F}
+  \definecolor{heading}{HTML}{001F3F}
+  \definecolor{subheading}{HTML}{004D7A}
+  \definecolor{hyperlink}{HTML}{007BFF}
+  \definecolor{default}{HTML}{555555}
+  % % classic blue tones
+  % \definecolor{background}{HTML}{FAFAFA}
+  % \definecolor{left_margin}{HTML}{0D47A1}
+  % \definecolor{heading}{HTML}{0D47A1}
+  % \definecolor{subheading}{HTML}{3F51B5}
+  % \definecolor{hyperlink}{HTML}{1560BD}
+  % \definecolor{default}{HTML}{49515E}
 % for smart reuse of footnotes
-%\usepackage[stable,symbol]{footmisc}
 % URLs
 \usepackage[hyperfootnotes=false]{hyperref}
-%\usepackage{hyperref}
   \hypersetup{pdfpagemode=UseNone, %None ,%UseOutlines,
               %bookmarks=false,
               breaklinks=true,
               colorlinks=true,
-              urlcolor=darkblue,
+              urlcolor=hyperlink,
               linkcolor=black,
               %linkcolor=red,
               linkbordercolor=white,
               pdfstartview=FitH,
               pdfpagelayout=OneColumn,
-              pdftitle={Curriculum Vitae},
-              pdfsubject={Curriculum Vitae},
+              pdftitle={Résumé},
+              pdfsubject={Résumé},
               pdfauthor={Pieter A. Rautenbach}}
 \usepackage{rotchiffre}
 % cv item selector
@@ -91,19 +105,19 @@
 
 \begin{tikzpicture}[overlay]
   \begin{pgfonlayer}{background}
-    \draw[darkblue][line width=1cm] (-21mm,34mm) -- (-21mm,-263mm);
+    \draw[left_margin][line width=2cm] (-21mm,34mm) -- (-21mm,-263mm);
   \end{pgfonlayer}
 \end{tikzpicture}
 
 \thispagestyle{plain}
 \begin{center}
-  {\LARGE \textbf{Pieter Rautenbach}} \\[\cvitemsep]
-  {\textit{Engineering Director @ takealot.com}} \\[\cvitemsep]  
+  {\LARGE \textbf{\color{heading}Pieter Rautenbach}} \\[\cvitemsep]
+  {\textit{\color{subheading}Engineering Director @ takealot.com}} \\[\cvitemsep]
   {\textit{\mbox{{\pp}27 (0) 82 824 3879} / parautenbach@gmail.com}} \\[\cvitemsep]
    \today{}
 \end{center}
 
-\cvsection{\color{title}General Information}
+\cvsection{\color{heading}General Information}
 \begin{cvenv}
   \cvitem{Nationality}{South African}
   \cvitem{ID no.}{800218 5052 08 9}
@@ -116,17 +130,17 @@
   \cvitem{}{\href{https://github.com/parautenbach}{www.github.com}}
 \end{cvenv}
 
-\cvsection{\color{title}Roles \& Expertise}
+\cvsection{\color{heading}Roles \& Expertise}
 \begin{cvenv}
   \cvitem{Summary}{Engineering Director, Software Development Manager, General Manager, \\
                    Sofware Architect, Product Manager, Team Lead, Data Scientist and \\ 
                    Software Engineer with more than 20 years experience}
   \cvitem{Qualifications}{M.Sc.Eng.~(Digital Signal Processing and Machine Learning) (2004) \\
                           B.Eng.~(Electric and Electronic Eng. with Computer Science) (2002) \\
-                          Scrum Master, UML, TDD, Strategy \& Marketing}
+                          Scrum / Agile, UML, TDD, Strategy \& Marketing}
 \end{cvenv}
 
-\cvsection{\color{title}Employment History \\[-4ex]} % hack to fix spacing problem
+\cvsection{\color{heading}Employment History \\[-4ex]} % hack to fix spacing problem
 \begin{cvenv}
   \cvitem{}{} % hack to fix spacing problem
   \cvitem{takealot.com}{Engineering Director (Aug.~2017--)}
@@ -141,14 +155,14 @@
   \cvitem{Stone Three}{Junior Developer (Contractor) (Dec.~2000--Jan.~2001)}
 \end{cvenv}
 
-\cvsection{\color{title}Personal Insights}
+\cvsection{\color{heading}Personal Insights}
 \begin{cvenv}
-  \cvitem{Skills}{Creative technologist, designer of large-scale distributed systems, \\
-                  analyst, mentor, facilitator, recruiter, pragmatic agilist}
-  \cvitem{Environment}{Open, trusting, flexible, collaborative}
-  \cvitem{Traits}{Honest, professional, integrous, thorough, logical, fair, caring}
-  \cvitem{Involvement}{Presentations, interviews, workshops, articles, trustee and examiner}
-  \cvitem{Recreational}{Mountain biker, runner, hiker, singer, pianist, photographer, home automation hobbyist}
+  \cvitem{Skills}{Seasoned technologist, architect of highly concurrent distributed systems, \\
+                  agile leader, strategist, mentor, and advocate of continuous improvement.}
+  \cvitem{Environment}{Open, trusting, flexible, collaborative and iterative}
+  \cvitem{Traits}{Honest, professional, integrous, thorough, logical, fair and empathetic}
+  \cvitem{Involvement}{Presentations, interviews, workshops, published articles, trustee and examiner}
+  \cvitem{Recreational}{Mountain biker, runner, hiker, singer, pianist, photographer and home automation enthusiast}
   \cvitem{References}{Stuart~Redpath, Wikus~Brink, Marnus~Freeman, Adam~Nachman, P.W.~Nel,
                       Gerhard~Esterhuizen, Aslam~Khan, Francois~Swanepoel, Ben~Herbst, Joan~Roux}
 \end{cvenv}
@@ -156,13 +170,13 @@
 \vfill
 
 \begin{center}
-  {\textit{"Software is invisible."}}
+  {\textit{\color{subheading}"Software is invisible."}}
 \end{center}
 \begin{center}
-  {\textit{"Be the first to do it better than anybody else."}}
+  {\textit{\color{subheading}"Be the first to do it better than anybody else."}}
 \end{center}
 \begin{center}
-  {\textit{"If you get any surprises in your performance review from me today, I haven't done my job."}}
+  {\textit{\color{subheading}"If you get any surprises in your performance review from me today, I haven't done my job."}}
 \end{center}
 
 \end{document}
